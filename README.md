@@ -133,8 +133,10 @@ This project uses the follow main features or external libraries:
 - [Service Worker](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API) for offline cache and usage (web app)
 
 ## Web app
+Look at https://github.com/ozelot379/ConvertJavaTextureToBedrock
 
 ## CLI
+Look at https://github.com/ozelot379/ConvertJavaTextureToBedrockCli
 
 ## Report issue
 Use github repo issues (https://github.com/ozelot379/ConvertJavaTextureToBedrock/issues/new/choose)
