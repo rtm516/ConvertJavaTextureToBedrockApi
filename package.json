@@ -1,7 +1,7 @@
 {
   "name": "@ozelot379/convert-minecraft-java-texture-to-bedrock",
   "productName": "ConvertJavaTextureToBedrock",
-  "version": "3.2.8",
+  "version": "3.3.0.",
   "description": "Convert Minecraft Java texture packs to Bedrock texture packs",
   "keywords": [
     "Minecraft",
@@ -15,7 +15,7 @@
   "license": "GPL-3.0-only",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ozelot379/ConvertJavaTextureToBedrock.git"
+    "url": "git+https://github.com/ozelot379/ConvertJavaTextureToBedrockApi.git"
   },
   "bugs": {
     "url": "https://github.com/ozelot379/ConvertJavaTextureToBedrock/issues"
