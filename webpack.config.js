@@ -23,7 +23,8 @@ module.exports = [
         output: {
             filename: "[name].web.js",
             path: __dirname + "/build",
-            libraryTarget: "umd"
+            libraryTarget: "umd",
+            globalObject: "this" // Fix worker
         },
         resolve: {
             alias: {
