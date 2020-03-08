@@ -1,6 +1,7 @@
 *
 !build
 !build/index.js
+!build/index.web.js
 !CHANGELOG.md
 !package.json
 !README.md
