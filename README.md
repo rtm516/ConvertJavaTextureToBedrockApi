@@ -14,6 +14,8 @@ It supports the follow Minecraft versions:
 
 Some conversions of HD texture packs may takes a while
 
+Shaders or Optifine or are not supported, only Vanilla!
+
 This project is inspired by the no longer continued [PCTexture2PE](https://github.com/rodrigojxd/PCTexture2PE)
 
 It supports to convert blocks, items, entities, paintings, particles, map icons, mob effects and hotbar
@@ -26,7 +28,7 @@ Some experimental conversions are disabled by default, but can be enabled if you
     - Tabs
     - Dialogs
     - Inventory / Recipe book
-    - Tables
+    - Crafting tables
 
 ## Use it direct in your code
 Add it as a dependency to your `package.json`
