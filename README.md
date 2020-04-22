@@ -12,9 +12,10 @@ It supports the follow Minecraft versions:
 | Java | v1.13.x, v1.14.x or v1.15.x |
 | Bedrock | v1.14.x |
 
-Some conversions of HD texture packs may takes a while
+Some conversions of HD texture packs may takes a while.
+Please note convert some texture packs need a device with enough memory.
 
-Shaders or Optifine or are not supported, only Vanilla!
+Shaders or Optifine or 3d are not supported, only Vanilla!
 
 This project is inspired by the no longer continued [PCTexture2PE](https://github.com/rodrigojxd/PCTexture2PE)
 
