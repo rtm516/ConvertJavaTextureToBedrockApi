@@ -13,7 +13,8 @@ It supports the follow Minecraft versions:
 | Bedrock | v1.14.x |
 
 Some conversions of HD texture packs may takes a while.
-Please note convert some texture packs need a device with corresponding enough memory.
+
+Convert texture packs need a device with corresponding enough memory like its file size and content.
 
 Shaders or Optifine or 3d textures or mods or datapacks are not supported, only classic Vanilla textures!
 
