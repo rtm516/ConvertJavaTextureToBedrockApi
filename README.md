@@ -16,11 +16,11 @@ This project is inspired by the no longer continued [PCTexture2PE](https://githu
 
 It supports to convert blocks, items, entities, paintings, particles, map icons, mob effects and hotbar
 
-Some conversions of HD texture packs may takes a while.
+Some conversions of HD texture packs may takes a while
 
-Convert texture packs need a device with corresponding enough memory like its file size and content.
+You need a device with corresponding enough memory (like file size and content of the texture pack)
 
-Shaders or Optifine or 3d textures or mods or datapacks are not supported, only classic Vanilla textures!
+Shaders or Optifine or 3d textures or mods or datapacks are not supported, only classic Vanilla textures
 
 Please reopen Minecraft after selecting the converted texture pack, because in the current version it seems to be a bug to reload the texture cache (Otherwise it's possible that you will have a mix between your previous and new texture pack, which can lead to appearance bugs that would not occur)
 
