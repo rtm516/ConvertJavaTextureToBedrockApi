@@ -1,5 +1,8 @@
 # Changelog
 
+## [3.3.2]
+- Update readme
+
 ## [3.3.1]
 - Split in separate repos
 

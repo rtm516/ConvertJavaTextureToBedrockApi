@@ -12,11 +12,15 @@ It supports the follow Minecraft versions:
 | Java | v1.13.x, v1.14.x or v1.15.x |
 | Bedrock | v1.14.x |
 
-Some conversions of HD texture packs may takes a while
-
 This project is inspired by the no longer continued [PCTexture2PE](https://github.com/rodrigojxd/PCTexture2PE)
 
 It supports to convert blocks, items, entities, paintings, particles, map icons, mob effects and hotbar
+
+Some conversions of HD texture packs may takes a while
+
+You need a device with corresponding enough memory (like file size and content of the texture pack)
+
+Shaders or Optifine or 3d textures or mods or datapacks are not supported, only classic Vanilla textures
 
 Please reopen Minecraft after selecting the converted texture pack, because in the current version it seems to be a bug to reload the texture cache (Otherwise it's possible that you will have a mix between your previous and new texture pack, which can lead to appearance bugs that would not occur)
 
@@ -26,7 +30,7 @@ Some experimental conversions are disabled by default, but can be enabled if you
     - Tabs
     - Dialogs
     - Inventory / Recipe book
-    - Tables
+    - Crafting tables
 
 ## Use it direct in your code
 Add it as a dependency to your `package.json`
