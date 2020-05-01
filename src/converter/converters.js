@@ -92,4 +92,26 @@ const converters = [
     ...DeleteConverter.getDefaultConverters()
 ];
 
-export {converters};
+/**
+ * @returns {AsyncIterableIterator<AbstractConverter>}
+ *
+ * @throws {Error}
+ */
+async function* getConverters() {
+    for (const converter of converters) {
+        yield converter;
+    }
+}
+
+/**
+ * @param {AbstractConverter[]} additional_converters
+ *
+ * @returns {Promise<void>}
+ */
+async function addAdditionalConverters(...additional_converters) {
+    for (const additional_converter of additional_converters) {
+        converters.push(additional_converter);
+    }
+}
+
+export {addAdditionalConverters, getConverters};

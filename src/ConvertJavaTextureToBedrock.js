@@ -1,7 +1,7 @@
 import {AbstractInput} from "./input/AbstractInput";
 import {AbstractLog} from "./log/AbstractLog";
 import {AbstractOutput} from "./output/AbstractOutput";
-import {addAdditionalConverters, getConverters} from "./converter";
+import {addAdditionalConverters, getConverters} from "./converter/converters";
 import {Options} from "./Options";
 
 /**

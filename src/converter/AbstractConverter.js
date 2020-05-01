@@ -84,7 +84,7 @@ class AbstractConverter {
      * @param {AbstractLog} log
      * @param {Options} options
      *
-     * @returns Promise<>
+     * @returns Promise<void>
      */
     async _init(input, output, log, options) {
         this.input = input;
@@ -126,7 +126,7 @@ class AbstractConverter {
      * @param {Jimp} image
      * @param {string} mime
      *
-     * @returns {Promise<>}
+     * @returns {Promise<void>}
      *
      * @protected
      */
@@ -138,7 +138,7 @@ class AbstractConverter {
      * @param {string} file
      * @param {*} json
      *
-     * @returns {Promise<>}
+     * @returns {Promise<void>}
      *
      * @protected
      */
