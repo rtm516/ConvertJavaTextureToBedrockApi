@@ -1,8 +1,5 @@
-*
-!build
-!build/index.js
-!build/index.web.js
-!CHANGELOG.md
-!package.json
-!README.md
-!yarn.lock
+.gitignore
+.idea
+build
+node_modules
+*.log

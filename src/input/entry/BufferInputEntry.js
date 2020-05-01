@@ -1,6 +1,6 @@
 import {AbstractInputEntry} from "./AbstractInputEntry";
-import JSZip from "jszip";
 import fs from "fs-extra";
+import JSZip from "jszip";
 import path from "path";
 
 /**

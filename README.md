@@ -41,7 +41,7 @@ yarn add @ozelot379/convert-minecraft-java-texture-to-bedrock
 
 Import it in your code
 ```javascript
-import ConvertJavaTextureToBedrock, {ConsoleLog, Input, LocalFileInputEntry, LocalFileOutput} from "@ozelot379/convert-minecraft-java-texture-to-bedrock";
+import {ConsoleLog, ConvertJavaTextureToBedrock, Input, LocalFileInputEntry, LocalFileOutput} from "@ozelot379/convert-minecraft-java-texture-to-bedrock";
 ```
 
 You can now convert your texture packs
@@ -96,7 +96,7 @@ try {
 
 ### Example
 ```javascript
-import ConvertJavaTextureToBedrock, {ConsoleLog, Input, LocalFileInputEntry, LocalFileOutput} from "@ozelot379/convert-minecraft-java-texture-to-bedrock";
+import {ConsoleLog, ConvertJavaTextureToBedrock, Input, LocalFileInputEntry, LocalFileOutput} from "@ozelot379/convert-minecraft-java-texture-to-bedrock";
 
 (async () => {
     let output;

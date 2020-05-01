@@ -1,5 +1,5 @@
 import {ArrayInput} from "./ArrayInput";
-import {AbstractInputEntry} from "./entry";
+import {AbstractInputEntry} from "./entry/AbstractInputEntry";
 
 /**
  * Class Input

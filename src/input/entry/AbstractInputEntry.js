@@ -1,6 +1,6 @@
-import {AbstractLog} from "./../../log";
+import {AbstractLog} from "../../log/AbstractLog";
 import JSZip from "jszip";
-import {Options} from "./../../Options";
+import {Options} from "../../Options";
 
 /**
  * Class AbstractInputEntry

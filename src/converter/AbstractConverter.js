@@ -1,8 +1,8 @@
-import {AbstractInput} from "./../input"
-import {AbstractLog} from "./../log";
-import {AbstractOutput} from "./../output";
+import {AbstractInput} from "../input/AbstractInput"
+import {AbstractLog} from "../log/AbstractLog";
+import {AbstractOutput} from "../output/AbstractOutput";
 import Jimp from "@ozelot379/jimp-plugins";
-import {Options} from "./../Options";
+import {Options} from "../Options";
 
 /**
  * Class AbstractConverter

@@ -1,6 +1,7 @@
-import {AbstractInput, AbstractInputEntry} from "./../input";
-import {AbstractLog} from "./../log";
-import {Options} from "./../Options";
+import {AbstractInput} from "../input/AbstractInput";
+import {AbstractInputEntry} from "../input/entry/AbstractInputEntry";
+import {AbstractLog} from "../log/AbstractLog";
+import {Options} from "../Options";
 
 /**
  * Class AbstractOutput
