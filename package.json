@@ -21,8 +21,7 @@
     "url": "https://github.com/ozelot379/ConvertJavaTextureToBedrock/issues"
   },
   "homepage": "https://github.com/ozelot379/ConvertJavaTextureToBedrock#readme",
-  "dependencies": {},
-  "devDependencies": {
+  "dependencies": {
     "@ozelot379/jimp-plugins": "https://github.com/ozelot379/jimp-plugins/tarball/master",
     "fs-extra": "^8.1.0",
     "jimp": "^0.9.3",
@@ -31,6 +30,7 @@
     "tga": "^1.0.3",
     "uuid": "^3.3.3"
   },
+  "devDependencies": {},
   "engines": {
     "node": ">=12.0.0"
   },
