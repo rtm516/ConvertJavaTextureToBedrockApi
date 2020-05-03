@@ -1,6 +1,7 @@
-import {AbstractInput, AbstractInputEntry} from "./../input";
-import {AbstractLog} from "./../log";
-import {Options} from "./../Options";
+import {AbstractInput} from "../input/AbstractInput";
+import {AbstractInputEntry} from "../input/entry/AbstractInputEntry";
+import {AbstractLog} from "../log/AbstractLog";
+import {Options} from "../Options";
 
 /**
  * Class AbstractOutput
@@ -43,7 +44,7 @@ class AbstractOutput {
      * @param {AbstractLog} log
      * @param {Options} options
      *
-     * @returns Promise<>
+     * @returns Promise<void>
      */
     async _init(input, log, options) {
         this.input = input;
@@ -54,7 +55,7 @@ class AbstractOutput {
     /**
      * @param {AbstractInputEntry} entry
      *
-     * @returns {Promise<>}
+     * @returns {Promise<void>}
      *
      * @throws {Error}
      *
@@ -92,7 +93,7 @@ class AbstractOutput {
      * @param {string} from
      * @param {string} to
      *
-     * @returns {Promise<>}
+     * @returns {Promise<void>}
      *
      * @throws {Error}
      *
@@ -119,7 +120,7 @@ class AbstractOutput {
      * @param {string} file
      * @param {Buffer} data
      *
-     * @returns {Promise<>}
+     * @returns {Promise<void>}
      *
      * @throws {Error}
      *
@@ -132,7 +133,7 @@ class AbstractOutput {
     /**
      * @param {string} path
      *
-     * @returns {Promise<>}
+     * @returns {Promise<void>}
      *
      * @throws {Error}
      *
@@ -146,7 +147,7 @@ class AbstractOutput {
      * @param {string} from
      * @param {string} to
      *
-     * @returns {Promise<>}
+     * @returns {Promise<void>}
      *
      * @throws {Error}
      *

@@ -48,7 +48,7 @@ class LocalFileInputEntry extends BufferInputEntry {
     }
 
     /**
-     * @returns {Promise<>}
+     * @returns {Promise<void>}
      *
      * @protected
      */

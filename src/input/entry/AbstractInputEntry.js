@@ -1,6 +1,6 @@
-import {AbstractLog} from "./../../log";
+import {AbstractLog} from "../../log/AbstractLog";
 import JSZip from "jszip";
-import {Options} from "./../../Options";
+import {Options} from "../../Options";
 
 /**
  * Class AbstractInputEntry
@@ -36,7 +36,7 @@ class AbstractInputEntry {
      * @param {AbstractLog} log
      * @param {Options} options
      *
-     * @returns Promise<>
+     * @returns Promise<void>
      */
     async _init(log, options) {
         this.log = log;
@@ -46,7 +46,7 @@ class AbstractInputEntry {
     /**
      * @param {string} folder
      *
-     * @returns {Promise<>}
+     * @returns {Promise<void>}
      *
      * @abstract
      */
@@ -57,7 +57,7 @@ class AbstractInputEntry {
     /**
      * @param {JSZip} zip
      *
-     * @returns {Promise<>}
+     * @returns {Promise<void>}
      *
      * @abstract
      */

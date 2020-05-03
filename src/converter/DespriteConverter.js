@@ -20,10 +20,14 @@ class DespriteConverter extends AbstractConverter {
 
         const factor = (image_from.getWidth() / factor_detect);
 
-        for (const [x, y, width, height, to] of sprites) {
+        for (const [x, y, width, height, to, empty_overlay] of sprites) {
             this.log.log(`Desprite ${to}`);
 
-            const image = image_from.clone().crop((x * factor), (y * factor), (width * factor), (height * factor));
+            let image = image_from.clone().crop((x * factor), (y * factor), (width * factor), (height * factor));
+
+            if (empty_overlay) {
+                image = image.fillArea((empty_overlay[0] * factor), (empty_overlay[1] * factor), (empty_overlay[2] * factor), (empty_overlay[3] * factor), [0, 0, 0, 0]);
+            }
 
             await this.writeImage(to, image);
         }
@@ -58,7 +62,7 @@ class DespriteConverter extends AbstractConverter {
                     [141, 0, 20, 22, "textures/ui/hotbar_7.png"],
                     [161, 0, 20, 22, "textures/ui/hotbar_8.png"],
                     [181, 0, 1, 22, "textures/ui/hotbar_end_cap.png"],
-                    [0, 22, 24, 24, "textures/ui/selected_hotbar_slot.png"]
+                    [0, 22, 24, 24, "textures/ui/selected_hotbar_slot.png", [4, 4, 16, 16]]
                 ]
             ],
             [
