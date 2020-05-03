@@ -26,13 +26,17 @@ class DespriteExperimentalConverter extends AbstractConverter {
 
         const factor = (image_from.getWidth() / factor_detect);
 
-        for (const [x, y, width, height, to, empty_area_alternative] of sprites) {
+        for (const [x, y, width, height, to, empty_area_alternative, empty_overlay] of sprites) {
             this.log.log(`Desprite ${to} (Experimental)`);
 
             let image = image_from.clone().crop((x * factor), (y * factor), (width * factor), (height * factor));
 
             if (image.isEmptyArea(0, 0, image.getWidth(), image.getHeight()) && empty_area_alternative) {
                 image = image_from.clone().crop((empty_area_alternative[0] * factor), (empty_area_alternative[1] * factor), (empty_area_alternative[2] * factor), (empty_area_alternative[3] * factor));
+            }
+
+            if (empty_overlay) {
+                image = image.fillArea((empty_overlay[0] * factor), (empty_overlay[1] * factor), (empty_overlay[2] * factor), (empty_overlay[3] * factor), [0, 0, 0, 0]);
             }
 
             await this.writeImage(to, image);
@@ -60,8 +64,8 @@ class DespriteExperimentalConverter extends AbstractConverter {
                 "textures/gui/widgets.png",
                 256,
                 [
-                    [0, 22, 24, 24, "textures/ui/pocket_ui_highlight_selected_slot.png"],
-                    [0, 22, 24, 24, "textures/ui/pocket_ui_highlight_slot.png"]
+                    [0, 22, 24, 24, "textures/ui/pocket_ui_highlight_selected_slot.png", null, [4, 4, 16, 16]],
+                    [0, 22, 24, 24, "textures/ui/pocket_ui_highlight_slot.png", null, [4, 4, 16, 16]]
                 ]
             ],
             [

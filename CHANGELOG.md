@@ -1,5 +1,9 @@
 # Changelog
 
+## [3.3.3]
+- Improve selected hotbar slot (if not transparent)
+- Update readme
+
 ## [3.3.2]
 - Update readme
 
