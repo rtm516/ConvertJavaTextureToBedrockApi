@@ -3,6 +3,7 @@
 ## [3.3.3]
 - Improve selected hotbar slot (if not transparent)
 - Update readme
+- Remove unnecessary build from api and some minor changes
 
 ## [3.3.2]
 - Update readme
