@@ -36,6 +36,12 @@ class ConvertJavaTextureToBedrock {
          */
         this.log = log;
         /**
+         * @type {AsyncIterableIterator<AbstractConverter>}
+         *
+         * @protected
+         */
+        this.converters = getConverters();
+        /**
          * @type {Options}
          *
          * @protected
@@ -90,7 +96,7 @@ class ConvertJavaTextureToBedrock {
      * @protected
      */
     async handleConverters() {
-        for await (const converter of getConverters()) {
+        for await (const converter of this.converters) {
             await converter._init(this.input, this.output, this.log, this.options);
 
             await addAdditionalConverters(...await converter.convert());
