@@ -1,7 +1,7 @@
 {
   "name": "@ozelot379/convert-minecraft-java-texture-to-bedrock",
   "productName": "ConvertJavaTextureToBedrock",
-  "version": "3.3.3",
+  "version": "3.3.4",
   "description": "Convert Minecraft Java texture packs to Bedrock texture packs",
   "keywords": [
     "Minecraft",
@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/ozelot379/ConvertJavaTextureToBedrock#readme",
   "dependencies": {
-    "@ozelot379/jimp-plugins": "https://github.com/ozelot379/jimp-plugins/tarball/master",
+    "@ozelot379/jimp-plugins": "^1.2.1",
     "fs-extra": "^8.1.0",
     "jimp": "^0.9.3",
     "jszip": "^3.2.2",

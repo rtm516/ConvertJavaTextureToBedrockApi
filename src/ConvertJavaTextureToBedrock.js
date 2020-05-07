@@ -36,6 +36,12 @@ class ConvertJavaTextureToBedrock {
          */
         this.log = log;
         /**
+         * @type {AsyncIterableIterator<AbstractConverter>}
+         *
+         * @protected
+         */
+        this.converters = getConverters();
+        /**
          * @type {Options}
          *
          * @protected
@@ -56,6 +62,25 @@ class ConvertJavaTextureToBedrock {
             this.log.warn(`EXPERIMENTAL CONVERSIONS ENABLED!`)
         }
 
+        await this.handleInput();
+
+        await this.handleConverters();
+
+        const output = await this.handleOutput();
+
+        this.log.log("Conversion finished");
+
+        this.log.log("Please reopen Minecraft after selecting the converted texture pack, because in the current version it seems to be a bug to reload the texture cache (Otherwise it's possible that you will have a mix between your previous and new texture pack, which can lead to appearance bugs that would not occur)");
+
+        return output;
+    }
+
+    /**
+     * @returns {Promise<void>}
+     *
+     * @protected
+     */
+    async handleInput() {
         await this.output._init(this.input, this.log, this.options);
 
         for await (const entry of this.input.getEntries()) {
@@ -63,20 +88,28 @@ class ConvertJavaTextureToBedrock {
 
             await this.output.applyInputEntry(entry);
         }
+    }
 
-        for await (const converter of getConverters()) {
+    /**
+     * @returns {Promise<void>}
+     *
+     * @protected
+     */
+    async handleConverters() {
+        for await (const converter of this.converters) {
             await converter._init(this.input, this.output, this.log, this.options);
 
             await addAdditionalConverters(...await converter.convert());
         }
+    }
 
-        const output = await this.output.generate();
-
-        this.log.log("Conversion finished");
-
-        this.log.log("Please reopen Minecraft after selecting the converted texture pack, because in the current version it seems to be a bug to reload the texture cache (Otherwise it's possible that you will have a mix between your previous and new texture pack, which can lead to appearance bugs that would not occur)");
-
-        return output;
+    /**
+     * @returns {Promise<*>}
+     *
+     * @protected
+     */
+    async handleOutput() {
+        return this.output.generate();
     }
 }
 
