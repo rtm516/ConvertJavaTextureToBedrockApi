@@ -1,5 +1,9 @@
 # Changelog
 
+## [3.3.4]
+- Some minor changes
+- Restore CLI
+
 ## [3.3.3]
 - Improve selected hotbar slot (if not transparent)
 - Update readme

@@ -114,5 +114,8 @@ This project uses the follow main features or external libraries:
 ## Web app
 Look at https://github.com/ozelot379/ConvertJavaTextureToBedrock
 
+## CLI
+Look at https://github.com/ozelot379/ConvertJavaTextureToBedrockCli
+
 ## Report issue
 Use github repo issues (https://github.com/ozelot379/ConvertJavaTextureToBedrock/issues/new/choose)
