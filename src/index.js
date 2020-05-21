@@ -17,9 +17,9 @@ import {Input} from "./input/Input";
 import {LocalFileInputEntry} from "./input/entry/LocalFileInputEntry";
 import {LocalFileOutput} from "./output/LocalFileOutput";
 import {LocalFolderInputEntry} from "./input/entry/LocalFolderInputEntry";
+import {LocalFolderOutput} from "./output/LocalFolderOutput";
 import {SilentLog} from "./log/SilentLog";
 import {Uint8ArrayOutput} from "./output/Uint8ArrayOutput";
-import {LocalFolderOutput} from "./output/LocalFolderOutput";
 
 export {
     //AbstractConverter,
