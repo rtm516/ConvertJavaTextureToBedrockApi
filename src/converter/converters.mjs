@@ -1,0 +1,117 @@
+import {AbstractConverter} from "./AbstractConverter.mjs";
+import {ArrowConverter} from "./ArrowConverter.mjs";
+import {AtlasConverter} from "./AtlasConverter.mjs";
+import {BannerPatternConverter} from "./BannerPatternConverter.mjs";
+import {BarConverter} from "./BarConverter.mjs";
+import {BedConverter} from "./BedConverter.mjs";
+import {BeeConverter} from "./BeeConverter.mjs";
+import {ChestFrontConverter} from "./ChestFrontConverter.mjs";
+import {ChestLeftRightDoubleConverter} from "./ChestLeftRightDoubleConverter.mjs";
+import {ChestNormalConverter} from "./ChestNormalConverter.mjs";
+import {ChestSideConverter} from "./ChestSideConverter.mjs";
+import {ColorizeOverlayConverter} from "./ColorizeOverlayConverter.mjs";
+import {CopyConverter} from "./CopyConverter.mjs";
+import {DeleteConverter} from "./DeleteConverter.mjs";
+import {DespriteConverter} from "./DespriteConverter.mjs";
+import {DespriteExperimentalConverter} from "./DespriteExperimentalConverter.mjs";
+import {DestroyStageConverter} from "./DestroyStageConverter.mjs";
+import {DialogConverter} from "./DialogConverter.mjs";
+import {DrownedConverter} from "./DrownedConverter.mjs";
+import {EnchantedItemGlintConverter} from "./EnchantedItemGlintConverter.mjs";
+import {FishHookConverter} from "./FishingConverter.mjs";
+import {FireworksConverter} from "./FireworksConverter.mjs";
+import {FoxConverter} from "./FoxConverter.mjs";
+import {HorseConverter} from "./HorseConverter.mjs";
+import {IconsConverter} from "./IconsConverter.mjs";
+import {MapIconsConverter} from "./MapIconsConverter.mjs";
+import {MetadataConverter} from "./MetadataConverter.mjs";
+import {NineSliceConverter} from "./NineSliceConverter.mjs";
+import {OpaqueConverter} from "./OpaqueConverter.mjs";
+import {OverlayToTranslateConverter} from "./OverlayToTranslateConverter.mjs";
+import {Particles1_13Converter} from "./Particles1_13Converter.mjs";
+import {PistonArmConverter} from "./PistonArmConverter.mjs";
+import {PlaceholderConverter} from "./PlaceholderConverter.mjs";
+import {PngToTgaConverter} from "./PngToTgaConverter.mjs";
+import {RedstoneDustConverter} from "./RedstoneDustConverter.mjs";
+import {RenameConverter} from "./RenameConverter.mjs";
+import {SheepConverter} from "./SheepConverter.mjs";
+import {SideRotateConverter} from "./SideRotateConverter.mjs";
+import {SpriteConverter} from "./SpriteConverter.mjs";
+import {TitleConverter} from "./TitleConverter.mjs";
+import {TurtleConverter} from "./TurtleConverter.mjs";
+import {VillagerConverter} from "./VillagerConverter.mjs";
+import {WaterConverter} from "./WaterConverter.mjs";
+import {WeatherConverter} from "./WeatherConverter.mjs";
+
+/**
+ * @type {AbstractConverter[]}
+ */
+const converters = [
+    ...MetadataConverter.getDefaultConverters(),
+    ...RenameConverter.getDefaultConverters(),
+    ...AtlasConverter.getDefaultConverters(),
+    ...BannerPatternConverter.getDefaultConverters(),
+    ...BedConverter.getDefaultConverters(),
+    ...ChestNormalConverter.getDefaultConverters(),
+    ...ChestLeftRightDoubleConverter.getDefaultConverters(),
+    ...ChestFrontConverter.getDefaultConverters(),
+    ...ChestSideConverter.getDefaultConverters(),
+    ...DrownedConverter.getDefaultConverters(),
+    ...FireworksConverter.getDefaultConverters(),
+    ...FishHookConverter.getDefaultConverters(),
+    ...FoxConverter.getDefaultConverters(),
+    ...HorseConverter.getDefaultConverters(),
+    ...IconsConverter.getDefaultConverters(),
+    ...MapIconsConverter.getDefaultConverters(),
+    ...PistonArmConverter.getDefaultConverters(),
+    ...RedstoneDustConverter.getDefaultConverters(),
+    ...SheepConverter.getDefaultConverters(),
+    ...VillagerConverter.getDefaultConverters(),
+    ...TurtleConverter.getDefaultConverters(),
+    ...WeatherConverter.getDefaultConverters(),
+    ...OpaqueConverter.getDefaultConverters(),
+    ...WaterConverter.getDefaultConverters(),
+    ...BeeConverter.getDefaultConverters(),
+    ...TitleConverter.getDefaultConverters(),
+    ...DespriteConverter.getDefaultConverters(),
+    ...DespriteExperimentalConverter.getDefaultConverters(),
+    ...BarConverter.getDefaultConverters(),
+    ...NineSliceConverter.getDefaultConverters(),
+    ...DialogConverter.getDefaultConverters(),
+    ...OverlayToTranslateConverter.getDefaultConverters(),
+    ...ColorizeOverlayConverter.getDefaultConverters(),
+    ...PlaceholderConverter.getDefaultConverters(),
+    ...SideRotateConverter.getDefaultConverters(),
+    ...ArrowConverter.getDefaultConverters(),
+    ...Particles1_13Converter.getDefaultConverters(),
+    ...SpriteConverter.getDefaultConverters(),
+    ...DestroyStageConverter.getDefaultConverters(),
+    ...EnchantedItemGlintConverter.getDefaultConverters(),
+    ...PngToTgaConverter.getDefaultConverters(),
+    ...CopyConverter.getDefaultConverters(),
+    ...DeleteConverter.getDefaultConverters()
+];
+
+/**
+ * @returns {AsyncIterableIterator<AbstractConverter>}
+ *
+ * @throws {Error}
+ */
+async function* getConverters() {
+    for (const converter of converters) {
+        yield converter;
+    }
+}
+
+/**
+ * @param {AbstractConverter[]} additional_converters
+ *
+ * @returns {Promise<void>}
+ */
+async function addAdditionalConverters(...additional_converters) {
+    for (const additional_converter of additional_converters) {
+        converters.push(additional_converter);
+    }
+}
+
+export {addAdditionalConverters, getConverters};
