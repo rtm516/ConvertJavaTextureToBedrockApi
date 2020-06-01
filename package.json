@@ -23,13 +23,13 @@
   },
   "homepage": "https://github.com/ozelot379/ConvertJavaTextureToBedrock#readme",
   "dependencies": {
-    "@ozelot379/jimp-plugins": "^1.2.3",
-    "fs-extra": "^8.1.0",
-    "jimp": "^0.9.3",
-    "jszip": "^3.2.2",
-    "readdirp": "^3.1.2",
-    "tga": "^1.0.3",
-    "uuid": "^3.3.3"
+    "@ozelot379/jimp-plugins": "1.2.3",
+    "fs-extra": "8.1.0",
+    "jimp": "0.9.8",
+    "jszip": "3.4.0",
+    "readdirp": "3.4.0",
+    "tga": "1.0.3",
+    "uuid": "3.4.0"
   },
   "devDependencies": {},
   "engines": {
