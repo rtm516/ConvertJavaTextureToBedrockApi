@@ -14,7 +14,7 @@ This is an "ES module"
 
 So it requires a current web browser or NodeJS v14
 
-If you need older support, please use something like `webpack` or `babel`
+If you need older support, please try to use something like `webpack` or `babel`
 
 ## Use it direct in your code
 
