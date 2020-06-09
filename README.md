@@ -2,7 +2,7 @@ THIS PROJECT IS NO OFFICIAL MINECRAFT PRODUCT - NOT AUTHORIZED OR ASSOCIATED BY 
 
 ---
 
-# Convert Minecraft Java texture packs to Bedrock texture packs
+# API for convert Minecraft Java texture packs to Bedrock texture packs
 
 ## Description
 
