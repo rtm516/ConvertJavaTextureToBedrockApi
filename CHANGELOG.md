@@ -1,5 +1,8 @@
 # Changelog
 
+## [3.4.0]
+- "ES module"
+
 ## [3.3.4]
 - Some minor changes
 - Restore CLI
