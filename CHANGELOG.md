@@ -1,7 +1,8 @@
 # Changelog
 
-## [3.4.0]
+## [3.4.1]
 - "ES module"
+- Docker images
 
 ## [3.3.4]
 - Some minor changes
