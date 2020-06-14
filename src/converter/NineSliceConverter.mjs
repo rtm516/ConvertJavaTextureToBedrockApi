@@ -37,11 +37,11 @@ class NineSliceConverter extends AbstractConverter {
             };
 
             for (const to of tos) {
-                const to_png = to + ".png";
+                const to_png = `${to}.png`;
                 this.log.log(`Convert button ${to_png} (Experimental)`);
                 await this.writeImage(to_png, image);
 
-                await this.writeJson(to + ".json", metadata);
+                await this.writeJson(`${to}.json`, metadata);
             }
         }
 
@@ -51,11 +51,11 @@ class NineSliceConverter extends AbstractConverter {
             base_size: [1, 1]
         };
         for (const to of borders) {
-            const to_png = to + ".png";
+            const to_png = `${to}.png`;
             this.log.log(`Convert button ${to_png} (Experimental)`);
             await this.writeImage(to_png, transparent_image);
 
-            await this.writeJson(to + ".json", transparent_image_metadata);
+            await this.writeJson(`${to}.json`, transparent_image_metadata);
         }
 
         return [];
