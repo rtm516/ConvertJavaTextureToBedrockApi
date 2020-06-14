@@ -1,5 +1,5 @@
 {
-  "name": "@ozelot379/convert-minecraft-java-texture-to-bedrock",
+  "name": "@ozelot379/convert-minecraft-java-texture-to-bedrock-api",
   "type": "module",
   "productName": "ConvertJavaTextureToBedrockApi",
   "version": "3.4.2",
