@@ -1,7 +1,7 @@
 import {AbstractInputEntry} from "./AbstractInputEntry.mjs";
-import fs from "fs-extra";
-import path from "path";
-import readdirp from "readdirp";
+import {copyFile, mkdir, readdir, readFile} from "fs/promises";
+import {join, parse} from "path";
+import JSZip from "jszip";
 
 /**
  * Class LocalFolderInputEntry
@@ -29,7 +29,27 @@ class LocalFolderInputEntry extends AbstractInputEntry {
     async applyToFolder(folder) {
         this.log.log(`Copy ${this.path}`);
 
-        return fs.copy(this.path, folder);
+        await this.applyToFolderScanFiles(this.path, folder);
+    }
+
+    /**
+     * @param {string} from
+     * @param {string} to
+     *
+     * @returns {Promise<void>}
+     *
+     * @private
+     */
+    async applyToFolderScanFiles(from, to) {
+        for (const dirent of await readdir(from, {withFileTypes: true})) {
+            if (dirent.isDirectory()) {
+                await mkdir(join(to, dirent.name), {recursive: true});
+                await this.applyToFolderScanFiles(join(from, dirent.name), join(to, dirent.name));
+            } else {
+                await mkdir(to, {recursive: true});
+                await copyFile(join(from, dirent.name), join(to, dirent.name));
+            }
+        }
     }
 
     /**
@@ -38,15 +58,27 @@ class LocalFolderInputEntry extends AbstractInputEntry {
     async applyToZip(zip) {
         this.log.log(`Pack ${this.path}`);
 
-        for await (const {fullPath, path, dirent} of readdirp(this.path, {
-            type: "files_directories"
-        })) {
-            const destPath = path.replace(/\\/g, "/");
+        await this.applyToZipScanFiles(zip, ".");
+
+    }
+
+    /**
+     * @param {JSZip} zip
+     * @param {string} p
+     *
+     * @returns {Promise<void>}
+     *
+     * @private
+     */
+    async applyToZipScanFiles(zip, p) {
+        for (const dirent of await readdir(join(this.path, p), {withFileTypes: true})) {
+            const destPath = join(p, dirent.name).replace(/\\/g, "/");
 
             if (dirent.isDirectory()) {
                 zip.folder(destPath); // Empty folders
+                await this.applyToZipScanFiles(zip, destPath);
             } else {
-                zip.file(destPath, await fs.readFile(fullPath));
+                zip.file(destPath, await readFile(join(this.path, destPath)));
             }
         }
     }
@@ -55,7 +87,7 @@ class LocalFolderInputEntry extends AbstractInputEntry {
      * @inheritDoc
      */
     async getName() {
-        return path.parse(this.path).name; // Name without file extension
+        return parse(this.path).name; // Name without file extension
     }
 }
 

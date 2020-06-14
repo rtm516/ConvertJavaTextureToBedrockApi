@@ -1,5 +1,6 @@
 import {BufferOutput} from "./BufferOutput.mjs";
-import fs from "fs-extra";
+import {dirname} from "path";
+import {mkdir, writeFile} from "fs/promises";
 
 /**
  * Class LocalFileOutput
@@ -29,7 +30,8 @@ class LocalFileOutput extends BufferOutput {
 
         this.log.log(`Write ${this.path}`);
 
-        await fs.outputFile(this.path, data);
+        await mkdir(dirname(this.path), {recursive: true});
+        await writeFile(this.path, data);
 
         return this.path;
     }

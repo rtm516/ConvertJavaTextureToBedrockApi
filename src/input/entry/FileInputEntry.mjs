@@ -1,6 +1,6 @@
 import {BufferInputEntry} from "./BufferInputEntry.mjs";
-import fs from "fs-extra";
-import path from "path";
+import {dirname, join, parse, sep} from "path";
+import {mkdir, writeFile} from "fs/promises";
 
 /**
  * Class FileInputEntry
@@ -14,11 +14,12 @@ class FileInputEntry extends BufferInputEntry {
             // File is part of selected folder
             this.log.log(`Extract`);
 
-            let destPath = this.buffer.webkitRelativePath.split(path.sep);
+            let destPath = this.buffer.webkitRelativePath.split(sep);
             destPath.shift();
-            destPath = path.join([folder, ...destPath]);
+            destPath = join([folder, ...destPath]);
 
-            await fs.outputFile(destPath, this.buffer);
+            await mkdir(dirname(destPath), {recursive: true});
+            await writeFile(destPath, this.buffer);
         } else {
             // File is a normal Buffer
             return super.applyToFolder(folder);
@@ -31,9 +32,9 @@ class FileInputEntry extends BufferInputEntry {
     async applyToZip(zip) {
         if (this.buffer.webkitRelativePath) {
             // File is part of selected folder
-            let destPath = this.buffer.webkitRelativePath.split(path.sep);
+            let destPath = this.buffer.webkitRelativePath.split(sep);
             destPath.shift();
-            destPath = destPath.join(path.sep);
+            destPath = destPath.join(sep);
 
             this.log.log(`Pack ${destPath}`);
 
@@ -49,9 +50,9 @@ class FileInputEntry extends BufferInputEntry {
      */
     async getName() {
         if (this.buffer.webkitRelativePath) {
-            return this.buffer.webkitRelativePath.split(path.sep).shift(); // First folder is the name of selected folder
+            return this.buffer.webkitRelativePath.split(sep).shift(); // First folder is the name of selected folder
         } else {
-            return path.parse(this.buffer.name).name; // Name without file extension
+            return parse(this.buffer.name).name; // Name without file extension
         }
     }
 }

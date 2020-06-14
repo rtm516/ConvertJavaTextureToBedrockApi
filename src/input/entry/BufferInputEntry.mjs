@@ -1,7 +1,7 @@
 import {AbstractInputEntry} from "./AbstractInputEntry.mjs";
-import fs from "fs-extra";
+import {dirname, join} from "path";
 import JSZip from "jszip";
-import path from "path";
+import {mkdir, writeFile} from "fs/promises";
 
 /**
  * Class BufferInputEntry
@@ -34,12 +34,13 @@ class BufferInputEntry extends AbstractInputEntry {
         zip = await zip.loadAsync(this.buffer);
 
         for (const entry of Object.values(zip.files)) {
-            const destPath = path.join(folder, entry.name);
+            const destPath = join(folder, entry.name);
 
             if (entry.dir) {
-                await fs.ensureDir(destPath); // Empty folders
+                await mkdir(destPath, {recursive: true}); // Empty folders
             } else {
-                await fs.outputFile(destPath, await zip.file(entry.name).async("nodebuffer"));
+                await mkdir(dirname(destPath), {recursive: true});
+                await writeFile(destPath, await zip.file(entry.name).async("nodebuffer"));
             }
         }
     }
