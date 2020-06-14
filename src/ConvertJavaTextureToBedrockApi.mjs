@@ -5,11 +5,11 @@ import {addAdditionalConverters, getConverters} from "./converter/converters.mjs
 import {Options} from "./Options.mjs";
 
 /**
- * Class ConvertJavaTextureToBedrock
+ * Class ConvertJavaTextureToBedrockApi
  */
-class ConvertJavaTextureToBedrock {
+class ConvertJavaTextureToBedrockApi {
     /**
-     * ConvertJavaTextureToBedrock constructor
+     * ConvertJavaTextureToBedrockApi constructor
      *
      * @param {AbstractInput} input
      * @param {AbstractOutput} output
@@ -113,4 +113,4 @@ class ConvertJavaTextureToBedrock {
     }
 }
 
-export {ConvertJavaTextureToBedrock};
+export {ConvertJavaTextureToBedrockApi};

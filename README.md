@@ -6,7 +6,7 @@ THIS PROJECT IS NO OFFICIAL MINECRAFT PRODUCT - NOT AUTHORIZED OR ASSOCIATED BY 
 
 ## Description
 
-Look at https://github.com/ozelot379/ConvertJavaTextureToBedrock#user-content-description
+Look at https://github.com/ozelot379/ConvertJavaTextureToBedrockWebApp#user-content-description
 
 ## Requirements
 
@@ -27,7 +27,7 @@ yarn add @ozelot379/convert-minecraft-java-texture-to-bedrock
 Import it in your code
 
 ```javascript
-import {ConsoleLog, ConvertJavaTextureToBedrock, Input, LocalFileInputEntry, LocalFileOutput} from "@ozelot379/convert-minecraft-java-texture-to-bedrock";
+import {ConsoleLog, ConvertJavaTextureToBedrockApi, Input, LocalFileInputEntry, LocalFileOutput} from "@ozelot379/convert-minecraft-java-texture-to-bedrock";
 ```
 
 You can now convert your texture packs
@@ -35,7 +35,7 @@ You can now convert your texture packs
 ```javascript
 let output;
 try {
-    output = await new ConvertJavaTextureToBedrock(input, output, log, options).convert();
+    output = await new ConvertJavaTextureToBedrockApi(input, output, log, options).convert();
 } catch (err) {
 
 }
@@ -89,13 +89,13 @@ try {
 ### Example
 
 ```javascript
-import {ConsoleLog, ConvertJavaTextureToBedrock, Input, LocalFileInputEntry, LocalFileOutput} from "@ozelot379/convert-minecraft-java-texture-to-bedrock";
+import {ConsoleLog, ConvertJavaTextureToBedrockApi, Input, LocalFileInputEntry, LocalFileOutput} from "@ozelot379/convert-minecraft-java-texture-to-bedrock";
 
 (async () => {
     let output;
 
     try {
-        output = await new ConvertJavaTextureToBedrock(new Input(new LocalFileInputEntry("input/java_texture_pack.zip")), new LocalFileOutput("output/bedrock_texture_pack.mcpack"), new ConsoleLog()).convert();
+        output = await new ConvertJavaTextureToBedrockApi(new Input(new LocalFileInputEntry("input/java_texture_pack.zip")), new LocalFileOutput("output/bedrock_texture_pack.mcpack"), new ConsoleLog()).convert();
     } catch (err) {
         console.log(err);
 
@@ -133,7 +133,7 @@ This project uses the follow main features or external libraries:
 
 ## Web app
 
-Look at https://github.com/ozelot379/ConvertJavaTextureToBedrock
+Look at https://github.com/ozelot379/ConvertJavaTextureToBedrockWebApp
 
 ## CLI
 
@@ -141,4 +141,4 @@ Look at https://github.com/ozelot379/ConvertJavaTextureToBedrockCli
 
 ## Report issue
 
-Use github repo issues (https://github.com/ozelot379/ConvertJavaTextureToBedrock/issues/new/choose)
+Use github repo issues (https://github.com/ozelot379/ConvertJavaTextureToBedrockWebApp/issues/new/choose)
