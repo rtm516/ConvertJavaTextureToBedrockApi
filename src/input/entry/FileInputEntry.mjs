@@ -22,7 +22,7 @@ class FileInputEntry extends BufferInputEntry {
             await writeFile(destPath, this.buffer);
         } else {
             // File is a normal Buffer
-            return super.applyToFolder(folder);
+            await super.applyToFolder(folder);
         }
     }
 
@@ -41,7 +41,7 @@ class FileInputEntry extends BufferInputEntry {
             zip.file(destPath, this.buffer);
         } else {
             // File is a normal Blob
-            return super.applyToZip(zip);
+            await super.applyToZip(zip);
         }
     }
 

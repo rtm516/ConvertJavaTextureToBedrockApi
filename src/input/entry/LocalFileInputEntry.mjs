@@ -28,7 +28,7 @@ class LocalFileInputEntry extends BufferInputEntry {
     async applyToFolder(folder) {
         await this.read();
 
-        return super.applyToFolder(folder);
+        await super.applyToFolder(folder);
     }
 
     /**
@@ -37,7 +37,7 @@ class LocalFileInputEntry extends BufferInputEntry {
     async applyToZip(zip) {
         await this.read();
 
-        return super.applyToZip(zip);
+        await super.applyToZip(zip);
     }
 
     /**

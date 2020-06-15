@@ -1,8 +1,7 @@
 import {AbstractOutput} from "./AbstractOutput.mjs";
-import {copyFile, mkdir, readdir, readFile, rmdir, stat, writeFile} from "fs/promises";
+import {copyFile, mkdir, readdir, readFile, rename, rmdir, stat, writeFile} from "fs/promises";
 import {dirname, join} from "path";
 import {existsSync} from "fs";
-import fs_extra from "fs-extra";
 
 /**
  * Class LocalFolderOutput
@@ -33,12 +32,7 @@ class LocalFolderOutput extends AbstractOutput {
         if (await this.exists(".")) {
             this.log.log(`Remove exists output`);
 
-            try {
-                return this.delete(".");
-            } catch (err) {
-                // TODO: Bug on Windows? (EPERM: operation not permitted (rmdir))
-                this.log.warn(err);
-            }
+            await this.delete(".");
         }
     }
 
@@ -46,7 +40,7 @@ class LocalFolderOutput extends AbstractOutput {
      * @inheritDoc
      */
     async applyInputEntry(entry) {
-        return entry.applyToFolder(this.path);
+        await entry.applyToFolder(this.path);
     }
 
     /**
@@ -69,9 +63,11 @@ class LocalFolderOutput extends AbstractOutput {
      * @inheritDoc
      */
     async rename(from, to) {
-        return fs_extra.move(this.p(from), this.p(to), {
-            overwrite: true
-        });
+        if (await this.output.exists(to)) {
+            await this.delete(to);
+        }
+
+        await rename(this.p(from), this.p(to));
     }
 
     /**
@@ -93,7 +89,7 @@ class LocalFolderOutput extends AbstractOutput {
      * @inheritDoc
      */
     async delete(path) {
-        return rmdir(this.p(path), {recursive: true});
+        await rmdir(this.p(path), {recursive: true});
     }
 
     /**
