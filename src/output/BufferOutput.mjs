@@ -73,7 +73,7 @@ class BufferOutput extends AbstractOutput {
      * @inheritDoc
      */
     async read(file) {
-        await this.zip.file(file).async("nodebuffer");
+        return this.zip.file(file).async("nodebuffer");
     }
 
     /**
