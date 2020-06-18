@@ -19,7 +19,7 @@
     "url": "git+https://github.com/ozelot379/ConvertJavaTextureToBedrockApi.git"
   },
   "bugs": {
-    "url": "https://github.com/ozelot379/ConvertJavaTextureToBedrockWebApp/issues"
+    "url": "https://github.com/ozelot379/ConvertJavaTextureToBedrock/issues"
   },
   "homepage": "https://github.com/ozelot379/ConvertJavaTextureToBedrockApi#readme",
   "dependencies": {

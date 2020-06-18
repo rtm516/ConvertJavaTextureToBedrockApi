@@ -6,7 +6,7 @@ THIS PROJECT IS NO OFFICIAL MINECRAFT PRODUCT - NOT AUTHORIZED OR ASSOCIATED BY 
 
 ## Description
 
-Look at https://github.com/ozelot379/ConvertJavaTextureToBedrockWebApp#user-content-description
+Look at https://github.com/ozelot379/ConvertJavaTextureToBedrock#user-content-description
 
 ## Requirements
 
@@ -133,7 +133,7 @@ This project uses the follow main features or external libraries:
 
 ## Web app
 
-Look at https://github.com/ozelot379/ConvertJavaTextureToBedrockWebApp
+Look at https://github.com/ozelot379/ConvertJavaTextureToBedrock
 
 ## CLI
 
@@ -141,4 +141,4 @@ Look at https://github.com/ozelot379/ConvertJavaTextureToBedrockCli
 
 ## Report issue
 
-Use github repo issues (https://github.com/ozelot379/ConvertJavaTextureToBedrockWebApp/issues/new/choose)
+Use github repo issues (https://github.com/ozelot379/ConvertJavaTextureToBedrock/issues/new/choose)
