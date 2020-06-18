@@ -16,6 +16,7 @@ import {DespriteConverter} from "./DespriteConverter.mjs";
 import {DespriteExperimentalConverter} from "./DespriteExperimentalConverter.mjs";
 import {DestroyStageConverter} from "./DestroyStageConverter.mjs";
 import {DialogConverter} from "./DialogConverter.mjs";
+import {DolphinConverter} from "./DolphinConverter.mjs";
 import {DrownedConverter} from "./DrownedConverter.mjs";
 import {EnchantedItemGlintConverter} from "./EnchantedItemGlintConverter.mjs";
 import {FishHookConverter} from "./FishingConverter.mjs";
@@ -57,6 +58,7 @@ const converters = [
     ChestFrontConverter,
     ChestSideConverter,
     DrownedConverter,
+    DolphinConverter,
     FireworksConverter,
     FishHookConverter,
     FoxConverter,
