@@ -21,7 +21,7 @@ If you need older support, please try to use something like `webpack` or `babel`
 Add it as a dependency to your `package.json`
 
 ```bash
-yarn add @ozelot379/convert-minecraft-java-texture-to-bedrock
+yarn add @ozelot379/convert-minecraft-java-texture-to-bedrock-api
 ```
 
 Import it in your code
