@@ -2,7 +2,7 @@
   "name": "@ozelot379/convert-minecraft-java-texture-to-bedrock-api",
   "type": "module",
   "productName": "ConvertJavaTextureToBedrockApi",
-  "version": "3.4.2",
+  "version": "3.5.0",
   "description": "API for convert Minecraft Java texture packs to Bedrock texture packs",
   "keywords": [
     "Minecraft",

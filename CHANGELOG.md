@@ -1,6 +1,6 @@
 # Changelog
 
-## [3.4.2]
+## [3.5.0]
 - Convert dolphin texture
 
 ## [3.4.1]
