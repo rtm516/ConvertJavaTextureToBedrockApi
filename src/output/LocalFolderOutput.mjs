@@ -1,6 +1,7 @@
 import {AbstractOutput} from "./AbstractOutput.mjs";
-import fs from "fs-extra";
-import path from "path";
+import {copyFile, mkdir, readdir, readFile, rename, rmdir, stat, writeFile} from "fs/promises";
+import {dirname, join} from "path";
+import {existsSync} from "fs";
 
 /**
  * Class LocalFolderOutput
@@ -31,12 +32,7 @@ class LocalFolderOutput extends AbstractOutput {
         if (await this.exists(".")) {
             this.log.log(`Remove exists output`);
 
-            try {
-                return this.delete(".");
-            } catch (err) {
-                // TODO: Bug on Windows? (EPERM: operation not permitted (rmdir))
-                this.log.warn(err);
-            }
+            await this.delete(".");
         }
     }
 
@@ -44,7 +40,7 @@ class LocalFolderOutput extends AbstractOutput {
      * @inheritDoc
      */
     async applyInputEntry(entry) {
-        return entry.applyToFolder(this.path);
+        await entry.applyToFolder(this.path);
     }
 
     /**
@@ -60,44 +56,72 @@ class LocalFolderOutput extends AbstractOutput {
      * @inheritDoc
      */
     async exists(path) {
-        return fs.existsSync(this.p(path));
+        return existsSync(this.p(path));
     }
 
     /**
      * @inheritDoc
      */
     async rename(from, to) {
-        return fs.move(this.p(from), this.p(to), {
-            overwrite: true
-        });
+        if (await this.output.exists(to)) {
+            await this.delete(to);
+        }
+
+        await rename(this.p(from), this.p(to));
     }
 
     /**
      * @inheritDoc
      */
     async read(file) {
-        return fs.readFile(this.p(file));
+        return readFile(this.p(file));
     }
 
     /**
      * @inheritDoc
      */
     async write(file, data) {
-        return fs.outputFile(this.p(file), data);
+        await mkdir(dirname(this.p(file)), {recursive: true});
+        await writeFile(this.p(file), data);
     }
 
     /**
      * @inheritDoc
      */
     async delete(path) {
-        return fs.remove(this.p(path));
+        await rmdir(this.p(path), {recursive: true});
     }
 
     /**
      * @inheritDoc
      */
     async copy(from, to) {
-        return fs.copy(this.p(from), this.p(to));
+        if ((await stat(this.p(from))).isDirectory()) {
+            await this.copyScanFiles(from, to);
+        } else {
+            await mkdir(this.p(dirname(to)), {recursive: true});
+            await copyFile(this.p(from), this.p(to));
+        }
+    }
+
+    /**
+     * @param {string} from
+     * @param {string} to
+     *
+     * @returns {Promise<void>}
+     *
+     * @private
+     */
+    async copyScanFiles(from, to) {
+        for (const dirent of await readdir(this.p(from), {withFileTypes: true})) {
+            if (dirent.isDirectory()) {
+                await mkdir(this.p(to, dirent.name), {recursive: true});
+                await this.copyScanFiles(join(from, dirent.name), join(to, dirent.name));
+            } else {
+                await mkdir(this.p(to), {recursive: true});
+                await copyFile(this.p(from, dirent.name), this.p(to, dirent.name));
+            }
+        }
     }
 
     /**
@@ -107,8 +131,8 @@ class LocalFolderOutput extends AbstractOutput {
      *
      * @protected
      */
-    p(p) {
-        return path.join(this.path, p);
+    p(...p) {
+        return join(this.path, ...p);
     }
 }
 

@@ -27,7 +27,7 @@ yarn add @ozelot379/convert-minecraft-java-texture-to-bedrock
 Import it in your code
 
 ```javascript
-import {ConsoleLog, ConvertJavaTextureToBedrock, Input, LocalFileInputEntry, LocalFileOutput} from "@ozelot379/convert-minecraft-java-texture-to-bedrock";
+import {ConsoleLog, ConvertJavaTextureToBedrockApi, Input, LocalFileInputEntry, LocalFileOutput} from "@ozelot379/convert-minecraft-java-texture-to-bedrock-api";
 ```
 
 You can now convert your texture packs
@@ -35,7 +35,7 @@ You can now convert your texture packs
 ```javascript
 let output;
 try {
-    output = await new ConvertJavaTextureToBedrock(input, output, log, options).convert();
+    output = await new ConvertJavaTextureToBedrockApi(input, output, log, options).convert();
 } catch (err) {
 
 }
@@ -89,13 +89,13 @@ try {
 ### Example
 
 ```javascript
-import {ConsoleLog, ConvertJavaTextureToBedrock, Input, LocalFileInputEntry, LocalFileOutput} from "@ozelot379/convert-minecraft-java-texture-to-bedrock";
+import {ConsoleLog, ConvertJavaTextureToBedrockApi, Input, LocalFileInputEntry, LocalFileOutput} from "@ozelot379/convert-minecraft-java-texture-to-bedrock-api";
 
 (async () => {
     let output;
 
     try {
-        output = await new ConvertJavaTextureToBedrock(new Input(new LocalFileInputEntry("input/java_texture_pack.zip")), new LocalFileOutput("output/bedrock_texture_pack.mcpack"), new ConsoleLog()).convert();
+        output = await new ConvertJavaTextureToBedrockApi(new Input(new LocalFileInputEntry("input/java_texture_pack.zip")), new LocalFileOutput("output/bedrock_texture_pack.mcpack"), new ConsoleLog()).convert();
     } catch (err) {
         console.log(err);
 

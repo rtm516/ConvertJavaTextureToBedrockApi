@@ -54,11 +54,11 @@ class DialogConverter extends AbstractConverter {
                     base_size: [(to_image.getWidth() / factor), (to_image.getHeight() / factor)]
                 };
 
-                const to_png = to + ".png";
+                const to_png = `${to}.png`;
                 this.log.log(`Convert dialog ${to_png} (Experimental)`);
                 await this.writeImage(to_png, to_image);
 
-                await this.writeJson(to + ".json", metadata);
+                await this.writeJson(`${to}.json`, metadata);
             }
         }
 

@@ -23,7 +23,7 @@ class BufferOutput extends AbstractOutput {
      * @inheritDoc
      */
     async applyInputEntry(entry) {
-        return entry.applyToZip(this.zip);
+        await entry.applyToZip(this.zip);
     }
 
     /**

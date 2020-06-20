@@ -10,7 +10,7 @@ import {BlobOutput} from "./output/BlobOutput.mjs";
 import {BufferInputEntry} from "./input/entry/BufferInputEntry.mjs";
 import {BufferOutput} from "./output/BufferOutput.mjs";
 import {ConsoleLog} from "./log/ConsoleLog.mjs";
-import {ConvertJavaTextureToBedrock} from "./ConvertJavaTextureToBedrock.mjs";
+import {ConvertJavaTextureToBedrockApi} from "./ConvertJavaTextureToBedrockApi.mjs";
 import {FileInputEntry} from "./input/entry/FileInputEntry.mjs";
 import {FileOutput} from "./output/FileOutput.mjs";
 import {Input} from "./input/Input.mjs";
@@ -34,7 +34,7 @@ export {
     BufferInputEntry,
     BufferOutput,
     ConsoleLog,
-    ConvertJavaTextureToBedrock,
+    ConvertJavaTextureToBedrockApi,
     FileInputEntry,
     FileOutput,
     Input,

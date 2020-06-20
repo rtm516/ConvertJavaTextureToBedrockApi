@@ -16,7 +16,7 @@ class AtlasConverter extends AbstractConverter {
         let image = null;
 
         for (let i = 0; i <= count; i++) {
-            const step = base + (i.toString().padStart(2, "0") + ".png");
+            const step = `${base}${i.toString().padStart(2, "0")}.png`;
 
             if (!await this.output.exists(step)) {
                 continue;

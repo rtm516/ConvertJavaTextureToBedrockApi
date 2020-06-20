@@ -1,6 +1,6 @@
 import {BufferInputEntry} from "./BufferInputEntry.mjs";
-import fs from "fs-extra";
-import path from "path";
+import {parse} from "path";
+import {readFile} from "fs/promises";
 
 /**
  * Class LocalFileInputEntry
@@ -12,7 +12,7 @@ class LocalFileInputEntry extends BufferInputEntry {
      * @param {string} path
      */
     constructor(path) {
-        super(Buffer.alloc(0)); // `await fs.readFile(path)` not works here without change the usage of this class
+        super(Buffer.alloc(0)); // `await readFile(path)` not works here without change the usage of this class
 
         /**
          * @type {string}
@@ -28,7 +28,7 @@ class LocalFileInputEntry extends BufferInputEntry {
     async applyToFolder(folder) {
         await this.read();
 
-        return super.applyToFolder(folder);
+        await super.applyToFolder(folder);
     }
 
     /**
@@ -37,14 +37,14 @@ class LocalFileInputEntry extends BufferInputEntry {
     async applyToZip(zip) {
         await this.read();
 
-        return super.applyToZip(zip);
+        await super.applyToZip(zip);
     }
 
     /**
      * @inheritDoc
      */
     async getName() {
-        return path.parse(this.path).name; // Name without file extension
+        return parse(this.path).name; // Name without file extension
     }
 
     /**
@@ -56,7 +56,7 @@ class LocalFileInputEntry extends BufferInputEntry {
         if (this.buffer.byteLength === 0) {
             this.log.log(`Read ${this.path}`);
 
-            this.buffer = await fs.readFile(this.path);
+            this.buffer = await readFile(this.path);
         }
     }
 }

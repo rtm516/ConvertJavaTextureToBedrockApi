@@ -10,7 +10,7 @@ class FileOutput extends BlobOutput {
     async generate() {
         const data = await super.generate();
 
-        const name = ((await this.input.getName()) + ".mcpack");
+        const name = `${await this.input.getName()}.mcpack`;
 
         if (typeof File !== "undefined") {
             this.log.log(`Generate ${File.name} zip`);

@@ -1,5 +1,8 @@
 # Changelog
 
+## [3.5.0]
+- Convert dolphin texture
+
 ## [3.4.1]
 - "ES module"
 - Docker images

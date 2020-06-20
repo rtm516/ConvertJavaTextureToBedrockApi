@@ -27,11 +27,11 @@ class BarConverter extends AbstractConverter {
             };
 
             for (const [to, colorize] of tos) {
-                const to_png = to + ".png";
+                const to_png = `${to}.png`;
                 this.log.log(`Convert bar ${to_png}`);
                 await this.writeImage(to_png, image.clone().colorize(colorize));
 
-                await this.writeJson(to + ".json", metadata);
+                await this.writeJson(`${to}.json`, metadata);
             }
         }
 
