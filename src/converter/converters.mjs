@@ -11,7 +11,6 @@ import {ChestNormalConverter} from "./ChestNormalConverter.mjs";
 import {ChestSideConverter} from "./ChestSideConverter.mjs";
 import {ColorizeOverlayConverter} from "./ColorizeOverlayConverter.mjs";
 import {CopyConverter} from "./CopyConverter.mjs";
-import {CropConverter} from "./CropConverter.mjs";
 import {DeleteConverter} from "./DeleteConverter.mjs";
 import {DespriteConverter} from "./DespriteConverter.mjs";
 import {DespriteExperimentalConverter} from "./DespriteExperimentalConverter.mjs";
@@ -92,7 +91,6 @@ const converters = [
     EnchantedItemGlintConverter,
     PngToTgaConverter,
     CopyConverter,
-    CropConverter,
     DeleteConverter
 ].reduce((converters, converter) => {
     converters.push(...converter.getDefaultConverters());
