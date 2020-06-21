@@ -1,4 +1,5 @@
 import {AbstractConverter} from "./AbstractConverter.mjs";
+import {MetadataConverter} from "./MetadataConverter.mjs";
 
 /**
  * Class PlaceholderConverter
@@ -8,7 +9,11 @@ class PlaceholderConverter extends AbstractConverter {
      * @inheritDoc
      */
     async convert() {
-        const [from, x, y, width, height, factor_detect, to, not_center] = this.data;
+        const [from, x, y, width, height, factor_detect, to, not_center, min_pack_format] = this.data;
+
+        if (min_pack_format && MetadataConverter.mcmeta.pack.pack_format < min_pack_format) {
+            return [];
+        }
 
         if (!await this.output.exists(from)) {
             return [];
@@ -69,6 +74,11 @@ class PlaceholderConverter extends AbstractConverter {
             // Chest
             ["textures/entity/chest/normal.png", 14, 0, 14, 14, 64, "textures/blocks/chest_top.png"],
             ["textures/entity/chest/ender.png", 14, 0, 14, 14, 64, "textures/blocks/ender_chest_top.png"],
+
+            // Conduit
+            ["textures/blocks/conduit_base.png", 0, 0, 24, 12, 32, "textures/blocks/conduit_base.png", true],
+            ["textures/blocks/conduit_closed.png", 0, 0, 8, 8, 16, "textures/blocks/conduit_closed.png", true, 5],
+            ["textures/blocks/conduit_open.png", 0, 0, 8, 8, 16, "textures/blocks/conduit_open.png", true, 5],
 
             // Command block
             ["textures/blocks/chain_command_block_back.png", 0, 0, 16, 16, 16, "textures/blocks/chain_command_block_back_mipmap.png"],

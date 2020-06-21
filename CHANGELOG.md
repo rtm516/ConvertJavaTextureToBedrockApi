@@ -1,5 +1,8 @@
 # Changelog
 
+## [3.5.1]
+- Fix conduit textures
+
 ## [3.5.0]
 - Convert dolphin texture
 
