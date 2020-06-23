@@ -79,6 +79,7 @@ class DialogConverter extends AbstractConverter {
                         ["textures/ui/dialog_background_hollow_2", [8, 23, 8, 42]],
                         ["textures/ui/dialog_background_hollow_3", [8, 23, 8, 8]],
                         ["textures/ui/dialog_background_hollow_4", [8, 8, 8, 8]],
+                        ["textures/ui/dialog_background_hollow_4_thin", [6, 6, 6, 6]],
                         ["textures/ui/dialog_background_hollow_5", [8, 17, 8, 42]],
                         ["textures/ui/dialog_background_hollow_6", [8, 23, 8, 104]],
                         ["textures/ui/dialog_background_hollow_7", [8, 66, 8, 8]],

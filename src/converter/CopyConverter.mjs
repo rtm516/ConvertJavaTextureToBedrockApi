@@ -26,6 +26,13 @@ class CopyConverter extends AbstractConverter {
      */
     static get DEFAULT_CONVERTER_DATA() {
         return [
+            // Battern
+            ["textures/entity/banner/banner_pattern_illager.tga", "textures/entity/banner/banner_illager.tga"],
+
+            // Beef
+            ["textures/items/beef_cooked.png", "textures/items/hoglin_meat_cooked.png"],
+            ["textures/items/beef_raw.png", "textures/items/hoglin_meat_raw.png"],
+
             // Cat
             ["textures/entity/cat/redtabby.png", "textures/entity/cat/red.png"],
             ["textures/entity/cat/siamesecat.png", "textures/entity/cat/siamese.png"],
@@ -36,6 +43,10 @@ class CopyConverter extends AbstractConverter {
 
             // Command block
             ["textures/blocks/command_block_back_mipmap.png", "textures/blocks/command_block.png"],
+
+            // Compass & clock
+            ["textures/items/compass_atlas.png", "textures/items/lodestonecompass_atlas.png"],
+            ["textures/items/compass_item.png", "textures/items/lodestonecompass_item.png"],
 
             // Fire
             ["textures/blocks/fire_0.png", "textures/flame_atlas.png"],
@@ -74,6 +85,9 @@ class CopyConverter extends AbstractConverter {
             ["textures/items/empty_armor_slot_helmet.png", "textures/ui/empty_armor_slot_helmet.png"],
             ["textures/items/empty_armor_slot_leggings.png", "textures/ui/empty_armor_slot_leggings.png"],
             ["textures/items/empty_armor_slot_shield.png", "textures/ui/empty_armor_slot_shield.png"],
+
+            // Wither
+            ["textures/entity/creeper/creeper_armor.png", "textures/entity/wither_boss/wither_armor_blue.png"],
 
             ["bedrock_textures/", "textures/"]
         ];

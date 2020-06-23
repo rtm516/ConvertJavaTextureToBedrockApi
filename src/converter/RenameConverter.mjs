@@ -80,6 +80,8 @@ class RenameConverter extends AbstractConverter {
             ["textures/models/armor/leather_layer_1_overlay.png", "textures/models/armor/leather_1_overlay.png"],
             ["textures/models/armor/leather_layer_2.png", "textures/models/armor/leather_2.png"],
             ["textures/models/armor/leather_layer_2_overlay.png", "textures/models/armor/leather_2_overlay.png"],
+            ["textures/models/armor/netherite_layer_1.png", "textures/models/armor/netherite_1.png"],
+            ["textures/models/armor/netherite_layer_2.png", "textures/models/armor/netherite_2.png"],
             ["textures/models/armor/turtle_layer_1.png", "textures/models/armor/turtle_1.png"],
 
             // Arrow
@@ -90,6 +92,9 @@ class RenameConverter extends AbstractConverter {
             ["textures/blocks/bamboo_small_leaves.png", "textures/blocks/bamboo_small_leaf.png"],
             ["textures/blocks/bamboo_stage0.png", "textures/blocks/bamboo_sapling.png"],
             ["textures/blocks/bamboo_stalk.png", "textures/blocks/bamboo_stem.png"],
+
+            // Banner
+            ["textures/entity/banner/piglin.png", "textures/entity/banner/banner_piglin.png"],
 
             // Barrier
             ["textures/items/barrier.png", "textures/blocks/barrier.png"],
@@ -155,6 +160,7 @@ class RenameConverter extends AbstractConverter {
 
             // Campfire
             ["textures/blocks/campfire_fire.png", "textures/blocks/campfire.png"],
+            ["textures/blocks/soul_campfire_fire.png", "textures/blocks/soul_campfire.png"],
 
             // Carrot
             ["textures/blocks/carrots_stage0.png", "textures/blocks/carrots_stage_0.png"],
@@ -276,6 +282,14 @@ class RenameConverter extends AbstractConverter {
             // Cow
             ["textures/entity/cow/red_mooshroom.png", "textures/entity/cow/mooshroom.png"],
 
+            // Crimson
+            ["textures/blocks/crimson_nylium.png", "textures/blocks/crimson_nylium_top.png"],
+            ["textures/blocks/crimson_planks.png", "textures/blocks/huge_fungus/crimson_planks.png"],
+            ["textures/blocks/crimson_stem.png", "textures/blocks/huge_fungus/crimson_log_side.png"],
+            ["textures/blocks/crimson_stem_top.png", "textures/blocks/huge_fungus/crimson_log_top.png"],
+            ["textures/blocks/stripped_crimson_stem.png", "textures/blocks/huge_fungus/stripped_crimson_stem_side.png"],
+            ["textures/blocks/stripped_crimson_stem_top.png", "textures/blocks/huge_fungus/stripped_crimson_stem_top.png"],
+
             // Dead bush
             ["textures/blocks/dead_bush.png", "textures/blocks/deadbush.png"],
 
@@ -301,6 +315,8 @@ class RenameConverter extends AbstractConverter {
             // Door
             ["textures/blocks/acacia_door_bottom.png", "textures/blocks/door_acacia_lower.png"],
             ["textures/blocks/birch_door_bottom.png", "textures/blocks/door_birch_lower.png"],
+            ["textures/blocks/crimson_door_bottom.png", "textures/blocks/huge_fungus/crimson_door_lower.png"],
+            ["textures/blocks/crimson_door_top.png", "textures/blocks/huge_fungus/crimson_door_top.png"],
             ["textures/blocks/dark_oak_door_bottom.png", "textures/blocks/door_dark_oak_lower.png"],
             ["textures/blocks/iron_door_bottom.png", "textures/blocks/door_iron_lower.png"],
             ["textures/blocks/jungle_door_bottom.png", "textures/blocks/door_jungle_lower.png"],
@@ -313,6 +329,8 @@ class RenameConverter extends AbstractConverter {
             ["textures/blocks/jungle_door_top.png", "textures/blocks/door_jungle_upper.png"],
             ["textures/blocks/oak_door_top.png", "textures/blocks/door_wood_upper.png"],
             ["textures/blocks/spruce_door_top.png", "textures/blocks/door_spruce_upper.png"],
+            ["textures/blocks/warped_door_bottom.png", "textures/blocks/huge_fungus/warped_door_lower.png"],
+            ["textures/blocks/warped_door_top.png", "textures/blocks/huge_fungus/warped_door_top.png"],
             ["textures/items/acacia_door.png", "textures/items/door_acacia.png"],
             ["textures/items/birch_door.png", "textures/items/door_birch.png"],
             ["textures/items/dark_oak_door.png", "textures/items/door_dark_oak.png"],
@@ -502,6 +520,9 @@ class RenameConverter extends AbstractConverter {
             ["textures/blocks/tall_grass_bottom.png", "textures/blocks/double_plant_grass_bottom.png"],
             ["textures/blocks/tall_grass_top.png", "textures/blocks/double_plant_grass_top.png"],
 
+            // Hoglin
+            ["textures/entity/hoglin/zoglin.png", "textures/entity/zoglin/zoglin.png"],
+
             // Honey
             ["textures/blocks/honey_block_bottom.png", "textures/blocks/honey_bottom.png"],
             ["textures/blocks/honey_block_side.png", "textures/blocks/honey_side.png"],
@@ -661,6 +682,7 @@ class RenameConverter extends AbstractConverter {
             ["textures/items/music_disc_far.png", "textures/items/record_far.png"],
             ["textures/items/music_disc_mall.png", "textures/items/record_mall.png"],
             ["textures/items/music_disc_mellohi.png", "textures/items/record_mellohi.png"],
+            ["textures/items/music_disc_pigstep.png", "textures/items/record_pigstep.png"],
             ["textures/items/music_disc_stal.png", "textures/items/record_stal.png"],
             ["textures/items/music_disc_strad.png", "textures/items/record_strad.png"],
             ["textures/items/music_disc_wait.png", "textures/items/record_wait.png"],
@@ -827,16 +849,20 @@ class RenameConverter extends AbstractConverter {
             // Sign
             ["textures/entity/signs/acacia.png", "textures/entity/sign_acacia.png"],
             ["textures/entity/signs/birch.png", "textures/entity/sign_birch.png"],
+            ["textures/entity/signs/crimson.png", "textures/entity/sign_crimson.png"],
             ["textures/entity/signs/dark_oak.png", "textures/entity/sign_darkoak.png"],
             ["textures/entity/signs/jungle.png", "textures/entity/sign_jungle.png"],
             ["textures/entity/signs/oak.png", "textures/entity/sign.png"],
             ["textures/entity/signs/spruce.png", "textures/entity/sign_spruce.png"],
+            ["textures/entity/signs/warped.png", "textures/entity/sign_warped.png"],
             ["textures/items/acacia_sign.png", "textures/items/sign_acacia.png"],
             ["textures/items/birch_sign.png", "textures/items/sign_birch.png"],
+            ["textures/items/crimson_sign.png", "textures/items/sign_crimson.png"],
             ["textures/items/dark_oak_sign.png", "textures/items/sign_darkoak.png"],
             ["textures/items/jungle_sign.png", "textures/items/sign_jungle.png"],
             ["textures/items/oak_sign.png", "textures/items/sign.png"],
             ["textures/items/spruce_sign.png", "textures/items/sign_spruce.png"],
+            ["textures/items/warped_sign.png", "textures/items/sign_warped.png"],
 
             // Slime
             ["textures/blocks/slime_block.png", "textures/blocks/slime.png"],
@@ -866,6 +892,9 @@ class RenameConverter extends AbstractConverter {
             ["textures/blocks/stonecutter_saw.png", "textures/blocks/stonecutter2_saw.png"],
             ["textures/blocks/stonecutter_side.png", "textures/blocks/stonecutter2_side.png"],
             ["textures/blocks/stonecutter_top.png", "textures/blocks/stonecutter2_top.png"],
+
+            // Strider
+            ["textures/entity/strider/strider_cold.png", "textures/entity/strider/strider_suffocated.png"],
 
             // Structure
             ["textures/items/structure_void.png", "textures/blocks/structure_void.png"],
@@ -901,7 +930,9 @@ class RenameConverter extends AbstractConverter {
             ["textures/items/totem_of_undying.png", "textures/items/totem.png"],
 
             // Trapdoor
+            ["textures/blocks/crimson_trapdoor.png", "textures/blocks/huge_fungus/crimson_trapdoor.png"],
             ["textures/blocks/oak_trapdoor.png", "textures/blocks/trapdoor.png"],
+            ["textures/blocks/warped_trapdoor.png", "textures/blocks/huge_fungus/warped_trapdoor.png"],
 
             // Tripwire
             ["textures/blocks/tripwire.png", "textures/blocks/trip_wire.png"],
@@ -941,6 +972,20 @@ class RenameConverter extends AbstractConverter {
             ["textures/entity/villager2/levels/stone.png", "textures/entity/villager2/levels/level_stone.png"],
             ["textures/entity/villager2/professions/mason.png", "textures/entity/villager2/professions/stonemason.png"],
 
+            // Vine
+            ["textures/blocks/twisting_vines.png", "textures/blocks/twisting_vines_bottom.png"],
+            ["textures/blocks/twisting_vines_plant.png", "textures/blocks/twisting_vines_base.png"],
+            ["textures/blocks/weeping_vines.png", "textures/blocks/weeping_vines_bottom.png"],
+            ["textures/blocks/weeping_vines_plant.png", "textures/blocks/weeping_vines_base.png"],
+
+            // Warped
+            ["textures/blocks/stripped_warped_stem.png", "textures/blocks/huge_fungus/stripped_warped_stem_side.png"],
+            ["textures/blocks/stripped_warped_stem_top.png", "textures/blocks/huge_fungus/stripped_warped_stem_top.png"],
+            ["textures/blocks/warped_nylium.png", "textures/blocks/warped_nylium_top.png"],
+            ["textures/blocks/warped_planks.png", "textures/blocks/huge_fungus/warped_planks.png"],
+            ["textures/blocks/warped_stem.png", "textures/blocks/huge_fungus/warped_stem_side.png"],
+            ["textures/blocks/warped_stem_top.png", "textures/blocks/huge_fungus/warped_stem_top.png"],
+
             // Water
             ["textures/blocks/water_flow.png", "textures/blocks/water_flow_grey.png"],
             ["textures/blocks/water_still.png", "textures/blocks/water_still_grey.png"],
@@ -957,6 +1002,7 @@ class RenameConverter extends AbstractConverter {
 
             // Wither
             ["textures/entity/wither/", "textures/entity/wither_boss/"],
+            ["textures/entity/wither_boss/wither_armor.png", "textures/entity/wither_boss/wither_armor_white.png"],
 
             // Wool
             ["textures/blocks/black_wool.png", "textures/blocks/wool_colored_black.png"],
