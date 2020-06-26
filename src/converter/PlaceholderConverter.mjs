@@ -9,7 +9,7 @@ class PlaceholderConverter extends AbstractConverter {
      * @inheritDoc
      */
     async convert() {
-        const [from, x, y, width, height, factor_detect, to, not_center, min_pack_format] = this.data;
+        const [from, x, y, width, height, factor_detect, to, square_mode, min_pack_format] = this.data;
 
         if (min_pack_format && MetadataConverter.mcmeta.pack.pack_format < min_pack_format) {
             return [];
@@ -29,10 +29,27 @@ class PlaceholderConverter extends AbstractConverter {
 
         image.crop((x * factor), (y * factor), (width * factor), (height * factor));
 
-        if (!not_center) {
-            const size = Math.max(width, height);
+        switch (square_mode) {
+            case 1: {
+                // Left top
+                const size = Math.max(width, height);
 
-            image = (await this.createImage((size * factor), (size * factor))).composite(image, (((size * factor) - (width * factor)) / 2), (((size * factor) - (height * factor)) / 2));
+                image = (await this.createImage((size * factor), (size * factor))).composite(image, 0, 0);
+            }
+                break;
+
+            case 2:
+                // No
+                break;
+
+            case 0:
+            default: {
+                // Center
+                const size = Math.max(width, height);
+
+                image = (await this.createImage((size * factor), (size * factor))).composite(image, (((size * factor) - (width * factor)) / 2), (((size * factor) - (height * factor)) / 2));
+            }
+                break;
         }
 
         await this.writeImage(to, image);
@@ -71,14 +88,18 @@ class PlaceholderConverter extends AbstractConverter {
             ["textures/entity/bed/white.png", 6, 6, 16, 32, 64, "textures/items/bed_white.png"],
             ["textures/entity/bed/yellow.png", 6, 6, 16, 32, 64, "textures/items/bed_yellow.png"],
 
+            // Chain
+            ["textures/blocks/chain.png", 3, 0, 3, 16, 16, "textures/blocks/chain1.png", 1],
+            ["textures/blocks/chain.png", 0, 0, 3, 16, 16, "textures/blocks/chain2.png", 1],
+
             // Chest
             ["textures/entity/chest/normal.png", 14, 0, 14, 14, 64, "textures/blocks/chest_top.png"],
             ["textures/entity/chest/ender.png", 14, 0, 14, 14, 64, "textures/blocks/ender_chest_top.png"],
 
             // Conduit
-            ["textures/blocks/conduit_base.png", 0, 0, 24, 12, 32, "textures/blocks/conduit_base.png", true],
-            ["textures/blocks/conduit_closed.png", 0, 0, 8, 8, 16, "textures/blocks/conduit_closed.png", true, 5],
-            ["textures/blocks/conduit_open.png", 0, 0, 8, 8, 16, "textures/blocks/conduit_open.png", true, 5],
+            ["textures/blocks/conduit_base.png", 0, 0, 24, 12, 32, "textures/blocks/conduit_base.png", 2],
+            ["textures/blocks/conduit_closed.png", 0, 0, 8, 8, 16, "textures/blocks/conduit_closed.png", 2, 5],
+            ["textures/blocks/conduit_open.png", 0, 0, 8, 8, 16, "textures/blocks/conduit_open.png", 2, 5],
 
             // Command block
             ["textures/blocks/chain_command_block_back.png", 0, 0, 16, 16, 16, "textures/blocks/chain_command_block_back_mipmap.png"],
@@ -99,12 +120,14 @@ class PlaceholderConverter extends AbstractConverter {
             ["textures/items/watch_atlas.png", 0, 0, 16, 16, 16, "textures/items/clock_item.png"],
 
             // Sign
-            ["textures/entity/sign_acacia.png", 2, 2, 24, 12, 64, "textures/ui/sign_acacia.png", true],
-            ["textures/entity/sign_birch.png", 2, 2, 24, 12, 64, "textures/ui/sign_birch.png", true],
-            ["textures/entity/sign_darkoak.png", 2, 2, 24, 12, 64, "textures/ui/sign_darkoak.png", true],
-            ["textures/entity/sign_jungle.png", 2, 2, 24, 12, 64, "textures/ui/sign_jungle.png", true],
-            ["textures/entity/sign.png", 2, 2, 24, 12, 64, "textures/ui/sign.png", true],
-            ["textures/entity/sign_spruce.png", 2, 2, 24, 12, 64, "textures/ui/sign_spruce.png", true],
+            ["textures/entity/sign_acacia.png", 2, 2, 24, 12, 64, "textures/ui/sign_acacia.png", 2],
+            ["textures/entity/sign_birch.png", 2, 2, 24, 12, 64, "textures/ui/sign_birch.png", 2],
+            ["textures/entity/sign_crimson.png", 2, 2, 24, 12, 64, "textures/ui/sign_crimson.png", 2],
+            ["textures/entity/sign_darkoak.png", 2, 2, 24, 12, 64, "textures/ui/sign_darkoak.png", 2],
+            ["textures/entity/sign_jungle.png", 2, 2, 24, 12, 64, "textures/ui/sign_jungle.png", 2],
+            ["textures/entity/sign.png", 2, 2, 24, 12, 64, "textures/ui/sign.png", 2],
+            ["textures/entity/sign_spruce.png", 2, 2, 24, 12, 64, "textures/ui/sign_spruce.png", 2],
+            ["textures/entity/sign_warped.png", 2, 2, 24, 12, 64, "textures/ui/sign_warped.png", 2],
 
             // Water, lava & co.
             ["textures/blocks/cauldron_water.png", 0, 0, 16, 16, 16, "textures/blocks/cauldron_water_placeholder.png"],
@@ -115,9 +138,9 @@ class PlaceholderConverter extends AbstractConverter {
             ["textures/blocks/water_still.png", 0, 0, 16, 16, 16, "textures/blocks/water_placeholder.png"],
 
             // Zombie
-            ["textures/entity/pig/pigzombie.png", 0, 0, 64, 32, 64, "textures/entity/pig/pigzombie.png", true],
-            ["textures/entity/zombie/husk.png", 0, 0, 64, 32, 64, "textures/entity/zombie/husk.png", true],
-            ["textures/entity/zombie/zombie.png", 0, 0, 64, 32, 64, "textures/entity/zombie/zombie.png", true]
+            ["textures/entity/pig/pigzombie.png", 0, 0, 64, 32, 64, "textures/entity/pig/pigzombie.png", 2],
+            ["textures/entity/zombie/husk.png", 0, 0, 64, 32, 64, "textures/entity/zombie/husk.png", 2],
+            ["textures/entity/zombie/zombie.png", 0, 0, 64, 32, 64, "textures/entity/zombie/zombie.png", 2]
         ];
     }
 }

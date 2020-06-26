@@ -124,12 +124,12 @@ This files are applied additionally before output
 
 This project uses the follow main features or external libraries:
 
-- [Web Worker](https://developer.mozilla.org/docs/Web/API/Web_Workers_API) for convert it in the background to not freeze the browser ui (web app)
+- [Web Worker](https://developer.mozilla.org/docs/Web/API/Web_Workers_API) for convert it in the background to not freeze the browser ui (Web app)
 - [jszip](https://www.npmjs.com/package/jszip) for read, modify and write zip files
 - [jimp](https://www.npmjs.com/package/jimp) for graphic manipulation
-- [file-saver](https://www.npmjs.com/package/file-saver) for deliver the converted pack to download
-- [webpack](https://www.npmjs.com/package/webpack) for bundle the dist code
-- [Service Worker](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API) for offline cache and usage (web app)
+- [file-saver](https://www.npmjs.com/package/file-saver) for deliver the converted pack to download (Web app)
+- [webpack](https://www.npmjs.com/package/webpack) for bundle the dist code (Web app)
+- [Service Worker](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API) for offline cache and usage (Web app)
 
 ## Web app
 

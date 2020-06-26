@@ -41,7 +41,7 @@ class MetadataConverter extends AbstractConverter {
         MetadataConverter.mcmeta = JSON.parse((await this.output.read(from)).toString("utf8").trim()); // trim it to supports UF8 files with 'BOOM' at the beginning
 
         if (MetadataConverter.mcmeta.pack.pack_format !== 4 && MetadataConverter.mcmeta.pack.pack_format !== 5) {
-            throw new Error("Only supports pack_format 4 (v1.13 and v1.14) or 5 (v1.15)!");
+            throw new Error("Only supports pack_format 4 (v1.13 or v1.14) or 5 (v1.15 or v1.16)!");
         }
 
         const manifest = {

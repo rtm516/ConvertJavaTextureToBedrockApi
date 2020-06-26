@@ -134,6 +134,8 @@ class ColorizeOverlayConverter extends AbstractConverter {
 
             // Saddle
             [[["textures/entity/pig/pig.png"], ["textures/entity/saddle.png"]], "textures/entity/pig/pig_saddle.png"],
+            [[["textures/entity/strider/strider.png"], ["textures/entity/strider/strider_saddle.png"]], "textures/entity/strider/strider_saddled.png"],
+            [[["textures/entity/strider/strider_suffocated.png"], ["textures/entity/strider/strider_saddle.png", null, true]], "textures/entity/strider/strider_suffocated_saddled.png"],
 
             // Splash potion (Colors from px 7/9 from original bedrock textures)
             [[["textures/items/potion_overlay.png", [88, 184, 255]], ["textures/items/potion_bottle_splash_empty.png"]], "textures/items/potion_bottle_splash.png"],
@@ -166,6 +168,7 @@ class ColorizeOverlayConverter extends AbstractConverter {
 
             // Spawn egg (Colors from px 8/9 and 5/9 from original bedrock textures)
             [[["textures/items/spawn_egg.png", [65, 53, 41]], ["textures/items/spawn_egg_overlay.png", [13, 13, 13]]], "textures/items/egg_bat.png"],
+            [[["textures/items/spawn_egg.png", [204, 167, 58]], ["textures/items/spawn_egg_overlay.png", [59, 32, 24]]], "textures/items/egg_bee.png"],
             [[["textures/items/spawn_egg.png", [211, 153, 1]], ["textures/items/spawn_egg_overlay.png", [226, 220, 112]]], "textures/items/egg_blaze.png"],
             [[["textures/items/spawn_egg.png", [239, 200, 142]], ["textures/items/spawn_egg_overlay.png", [135, 101, 74]]], "textures/items/egg_cat.png"],
             [[["textures/items/spawn_egg.png", [10, 57, 67]], ["textures/items/spawn_egg_overlay.png", [149, 12, 12]]], "textures/items/egg_cave_spider.png"],
@@ -189,7 +192,7 @@ class ColorizeOverlayConverter extends AbstractConverter {
             [[["textures/items/spawn_egg.png", [102, 99, 83]], ["textures/items/spawn_egg_overlay.png", [197, 191, 127]]], "textures/items/egg_husk.png"],
             [[["textures/items/spawn_egg.png", [45, 0, 0]], ["textures/items/spawn_egg_overlay.png", [223, 223, 0]]], "textures/items/egg_lava_slime.png"],
             [[["textures/items/spawn_egg.png", [165, 136, 107]], ["textures/items/spawn_egg_overlay.png", [136, 84, 57]]], "textures/items/egg_llama.png"],
-            [[["textures/items/spawn_egg.png"], ["textures/items/spawn_egg_overlay.png"]], "textures/items/egg_mask.png"],
+            [[["textures/items/spawn_egg.png", [219, 0, 0]], ["textures/items/spawn_egg_overlay.png", [240, 226, 0]]], "textures/items/egg_mask.png"],
             [[["textures/items/spawn_egg.png", [23, 2, 0]], ["textures/items/spawn_egg_overlay.png", [72, 45, 26]]], "textures/items/egg_mule.png"],
             [[["textures/items/spawn_egg.png", [137, 13, 14]], ["textures/items/spawn_egg_overlay.png", [162, 162, 162]]], "textures/items/egg_mushroomcow.png"],
             [[["textures/items/spawn_egg.png"], ["textures/items/spawn_egg_overlay.png"]], "textures/items/egg_null.png"],

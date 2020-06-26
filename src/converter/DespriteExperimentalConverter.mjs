@@ -159,6 +159,15 @@ class DespriteExperimentalConverter extends AbstractConverter {
                     [192, 0, 16, 16, "textures/ui/loom_dye_empty.png", [33, 26, 16, 16]],
                     [208, 0, 16, 16, "textures/ui/loom_pattern_item_empty.png", [23, 45, 16, 16]]
                 ]
+            ],
+            [
+                "textures/gui/container/smithing.png",
+                256,
+                [
+                    [17, 7, 30, 30, "textures/ui/smithing_icon.png"],
+                    [53, 49, 13, 13, "textures/ui/smithing-table-plus.png"],
+                    [76, 47, 16, 16, "textures/ui/ingot_image.png"]
+                ]
             ]
         ];
     }

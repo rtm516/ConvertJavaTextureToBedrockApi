@@ -28,6 +28,8 @@ class DeleteConverter extends AbstractConverter {
         return [
             "assets/", // Speed up loading
 
+            "textures/blocks/chain.png",
+
             "textures/blocks/conduit.png",
             "textures/entity/conduit/break_particle.png",
 

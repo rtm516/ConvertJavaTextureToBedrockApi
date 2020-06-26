@@ -169,6 +169,7 @@ class SpriteConverter extends AbstractConverter {
                 ["textures/particle/bubble.png", 0, 16, 8],
                 ["textures/particle/flame.png", 0, 24, 8],
                 ["textures/particle/lava.png", 8, 24, 8],
+                ["textures/particle/soul_fire_flame.png", 16, 24, 8],
                 ["textures/particle/note.png", 0, 32, 8],
                 ["textures/particle/critical_hit.png", 8, 32, 8],
                 ["textures/particle/enchanted_hit.png", 16, 32, 8],
@@ -267,7 +268,20 @@ class SpriteConverter extends AbstractConverter {
                 ["textures/particle/big_smoke_9.png", 0, 144, 16],
                 ["textures/particle/big_smoke_10.png", 0, 160, 16],
                 ["textures/particle/big_smoke_11.png", 0, 176, 16]
-            ], "textures/particle/campfire_smoke.png"]
+            ], "textures/particle/campfire_smoke.png"],
+            [16, 176, [
+                ["textures/particle/soul_0.png", 0, 0, 16],
+                ["textures/particle/soul_1.png", 0, 16, 16],
+                ["textures/particle/soul_2.png", 0, 32, 16],
+                ["textures/particle/soul_3.png", 0, 48, 16],
+                ["textures/particle/soul_4.png", 0, 64, 16],
+                ["textures/particle/soul_5.png", 0, 80, 16],
+                ["textures/particle/soul_6.png", 0, 96, 16],
+                ["textures/particle/soul_7.png", 0, 112, 16],
+                ["textures/particle/soul_8.png", 0, 128, 16],
+                ["textures/particle/soul_9.png", 0, 144, 16],
+                ["textures/particle/soul_10.png", 0, 160, 16],
+            ], "textures/particle/soul.png"]
         ];
     }
 }

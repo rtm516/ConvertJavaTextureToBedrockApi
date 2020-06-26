@@ -30,6 +30,7 @@ import {NineSliceConverter} from "./NineSliceConverter.mjs";
 import {OpaqueConverter} from "./OpaqueConverter.mjs";
 import {OverlayToTranslateConverter} from "./OverlayToTranslateConverter.mjs";
 import {Particles1_13Converter} from "./Particles1_13Converter.mjs";
+import {PiglinConverter} from "./PiglinConverter.mjs";
 import {PistonArmConverter} from "./PistonArmConverter.mjs";
 import {PlaceholderConverter} from "./PlaceholderConverter.mjs";
 import {PngToTgaConverter} from "./PngToTgaConverter.mjs";
@@ -59,6 +60,7 @@ const converters = [
     ChestSideConverter,
     DrownedConverter,
     DolphinConverter,
+    PiglinConverter,
     FireworksConverter,
     FishHookConverter,
     FoxConverter,
