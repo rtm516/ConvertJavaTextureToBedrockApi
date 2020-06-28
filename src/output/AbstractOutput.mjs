@@ -156,6 +156,19 @@ class AbstractOutput {
     async copy(from, to) {
 
     }
+
+    /**
+     * @param {string} name
+     *
+     * @returns {Promise<string|null>}
+     *
+     * @throws {Error}
+     *
+     * @abstract
+     */
+    async lookupFile(name) {
+
+    }
 }
 
 export {AbstractOutput};

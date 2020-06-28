@@ -63,10 +63,11 @@ class LocalFolderOutput extends AbstractOutput {
      * @inheritDoc
      */
     async rename(from, to) {
-        if (await this.output.exists(to)) {
+        if (await this.exists(to)) {
             await this.delete(to);
         }
 
+        await mkdir(dirname(this.p(to)), {recursive: true});
         await rename(this.p(from), this.p(to));
     }
 
@@ -99,7 +100,7 @@ class LocalFolderOutput extends AbstractOutput {
         if ((await stat(this.p(from))).isDirectory()) {
             await this.copyScanFiles(from, to);
         } else {
-            await mkdir(this.p(dirname(to)), {recursive: true});
+            await mkdir(dirname(this.p(to)), {recursive: true});
             await copyFile(this.p(from), this.p(to));
         }
     }
@@ -122,6 +123,38 @@ class LocalFolderOutput extends AbstractOutput {
                 await copyFile(this.p(from, dirent.name), this.p(to, dirent.name));
             }
         }
+    }
+
+    /**
+     * @inheritDoc
+     */
+    async lookupFile(name) {
+        return this.lookupFileScanFiles(name, ".");
+    }
+
+    /**
+     * @param {string} name
+     * @param {string} p
+     *
+     * @returns {Promise<string|null>}
+     *
+     * @private
+     */
+    async lookupFileScanFiles(name, p) {
+        for (const dirent of await readdir(join(this.path, p), {withFileTypes: true})) {
+            if (dirent.isDirectory()) {
+                const path = await this.lookupFileScanFiles(name, join(p, dirent.name));
+                if (path) {
+                    return path;
+                }
+            } else {
+                if (dirent.name === name) {
+                    return p;
+                }
+            }
+        }
+
+        return null;
     }
 
     /**

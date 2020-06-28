@@ -1,4 +1,5 @@
 import {AbstractOutput} from "./AbstractOutput.mjs";
+import {basename, dirname} from "path";
 import JSZip from "jszip";
 
 /**
@@ -105,6 +106,21 @@ class BufferOutput extends AbstractOutput {
 
                 this.zip.files[clonedEntry.name] = clonedEntry;
             }
+        }
+    }
+
+    /**
+     * @inheritDoc
+     */
+    async lookupFile(name) {
+        const entry = Object.values(this.zip.files).find((entry) => {
+            return (!entry.dir && basename(entry.name) === name);
+        });
+
+        if (entry) {
+            return dirname(entry.name);
+        } else {
+            return null;
         }
     }
 }
