@@ -21,6 +21,7 @@ import {DrownedConverter} from "./DrownedConverter.mjs";
 import {EnchantedItemGlintConverter} from "./EnchantedItemGlintConverter.mjs";
 import {FishHookConverter} from "./FishingConverter.mjs";
 import {FireworksConverter} from "./FireworksConverter.mjs";
+import {FixWrongRootFolderConverter} from "./FixWrongRootFolderConverter.mjs";
 import {FoxConverter} from "./FoxConverter.mjs";
 import {HorseConverter} from "./HorseConverter.mjs";
 import {IconsConverter} from "./IconsConverter.mjs";
@@ -49,6 +50,7 @@ import {WeatherConverter} from "./WeatherConverter.mjs";
  * @type {AbstractConverter[]}
  */
 const converters = [
+    FixWrongRootFolderConverter,
     MetadataConverter,
     RenameConverter,
     AtlasConverter,
