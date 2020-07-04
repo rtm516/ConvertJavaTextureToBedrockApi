@@ -1,4 +1,4 @@
-import {AbstractConverter} from "./AbstractConverter.mjs";
+import {AbstractConverter} from "@ozelot379/convert-base-api";
 
 /**
  * Class RenameConverter
@@ -92,9 +92,6 @@ class RenameConverter extends AbstractConverter {
             ["textures/blocks/bamboo_small_leaves.png", "textures/blocks/bamboo_small_leaf.png"],
             ["textures/blocks/bamboo_stage0.png", "textures/blocks/bamboo_sapling.png"],
             ["textures/blocks/bamboo_stalk.png", "textures/blocks/bamboo_stem.png"],
-
-            // Banner
-            ["textures/entity/banner/piglin.png", "textures/entity/banner/banner_piglin.png"],
 
             // Barrier
             ["textures/items/barrier.png", "textures/blocks/barrier.png"],
@@ -720,6 +717,9 @@ class RenameConverter extends AbstractConverter {
             ["textures/entity/panda/playful_panda.png", "textures/entity/panda/panda_playful.png"],
             ["textures/entity/panda/weak_panda.png", "textures/entity/panda/panda_sneezy.png"],
             ["textures/entity/panda/worried_panda.png", "textures/entity/panda/panda_worried.png"],
+
+            // Piglin
+            ["textures/entity/piglin/zombified_piglin.png", "textures/entity/piglin/zombie_piglin.png"],
 
             // Piston
             ["textures/blocks/piston_top.png", "textures/blocks/piston_top_normal.png"],

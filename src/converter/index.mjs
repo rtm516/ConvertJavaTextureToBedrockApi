@@ -1,7 +1,9 @@
-import {AbstractConverter} from "./AbstractConverter.mjs";
+import {AbstractConverter} from "@ozelot379/convert-base-api";
 import {ArrowConverter} from "./ArrowConverter.mjs";
 import {AtlasConverter} from "./AtlasConverter.mjs";
 import {BannerPatternConverter} from "./BannerPatternConverter.mjs";
+import {BannerPatternBlackConverter} from "./BannerPatternBlackConverter.mjs";
+import {BannerPatternPreviewMaxSizeConverter} from "./BannerPatternPreviewMaxSizeConverter.mjs";
 import {BarConverter} from "./BarConverter.mjs";
 import {BedConverter} from "./BedConverter.mjs";
 import {BeeConverter} from "./BeeConverter.mjs";
@@ -31,7 +33,6 @@ import {NineSliceConverter} from "./NineSliceConverter.mjs";
 import {OpaqueConverter} from "./OpaqueConverter.mjs";
 import {OverlayToTranslateConverter} from "./OverlayToTranslateConverter.mjs";
 import {Particles1_13Converter} from "./Particles1_13Converter.mjs";
-import {PiglinConverter} from "./PiglinConverter.mjs";
 import {PistonArmConverter} from "./PistonArmConverter.mjs";
 import {PlaceholderConverter} from "./PlaceholderConverter.mjs";
 import {PngToTgaConverter} from "./PngToTgaConverter.mjs";
@@ -47,7 +48,7 @@ import {WaterConverter} from "./WaterConverter.mjs";
 import {WeatherConverter} from "./WeatherConverter.mjs";
 
 /**
- * @type {AbstractConverter[]}
+ * @type {Function<AbstractConverter>[]}
  */
 const converters = [
     FixWrongRootFolderConverter,
@@ -62,12 +63,12 @@ const converters = [
     ChestSideConverter,
     DrownedConverter,
     DolphinConverter,
-    PiglinConverter,
     FireworksConverter,
     FishHookConverter,
     FoxConverter,
     HorseConverter,
     IconsConverter,
+    BannerPatternBlackConverter,
     MapIconsConverter,
     PistonArmConverter,
     RedstoneDustConverter,
@@ -93,35 +94,10 @@ const converters = [
     SpriteConverter,
     DestroyStageConverter,
     EnchantedItemGlintConverter,
+    BannerPatternPreviewMaxSizeConverter,
     PngToTgaConverter,
     CopyConverter,
     DeleteConverter
-].reduce((converters, converter) => {
-    converters.push(...converter.getDefaultConverters());
+];
 
-    return converters;
-}, []);
-
-/**
- * @returns {AsyncIterableIterator<AbstractConverter>}
- *
- * @throws {Error}
- */
-async function* getConverters() {
-    for (const converter of converters) {
-        yield converter;
-    }
-}
-
-/**
- * @param {AbstractConverter[]} additional_converters
- *
- * @returns {Promise<void>}
- */
-async function addAdditionalConverters(...additional_converters) {
-    for (const additional_converter of additional_converters) {
-        converters.push(additional_converter);
-    }
-}
-
-export {addAdditionalConverters, getConverters};
+export {converters};

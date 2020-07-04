@@ -24,72 +24,11 @@ Add it as a dependency to your `package.json`
 yarn add @ozelot379/convert-minecraft-java-texture-to-bedrock-api
 ```
 
-Import it in your code
+You can convert your texture packs like
 
 ```javascript
-import {ConsoleLog, ConvertJavaTextureToBedrockApi, Input, LocalFileInputEntry, LocalFileOutput} from "@ozelot379/convert-minecraft-java-texture-to-bedrock-api";
-```
-
-You can now convert your texture packs
-
-```javascript
-let output;
-try {
-    output = await new ConvertJavaTextureToBedrockApi(input, output, log, options).convert();
-} catch (err) {
-
-}
-```
-
-### Input
-
-| Import | Description |
-|--------|-------------|
-| `Input` | The input consists on one input entry (Common) |
-| `ArrayInput` | The input consists on multiple input entries (For instance a selected folder with multiple `FileInputEntry`) |
-| `AbstractInput` | Base input |
-
-### Input entry
-
-| Import | For type |
-|--------|----------|
-| `BufferInputEntry` | - `ArrayBuffer`<br>- `Blob`<br>- `Buffer`<br>- `Uint8Array` |
-| `FileInputEntry` | `File` |
-| `LocalFileInputEntry` | Local file |
-| `LocalFolderInputEntry` | Local folder |
-| `AbstractInputEntry` | Base input entry |
-
-### Output
-
-| Import | For type |
-|--------|----------|
-| `ArrayBufferOutput` | `ArrayBuffer` |
-| `BlobOutput` | `Blob` |
-| `BufferOutput` | `Buffer` |
-| `FileBlobOutput` | `File` |
-| `LocalFileOutput` | Local file |
-| `LocalFolderOutput` | Local folder |
-| `Uint8ArrayOutput` | `Uint8Array` |
-| `AbstractOutput` | Base output |
-
-### Log
-
-| Import | Description |
-|--------|-------------|
-| `ConsoleLog` | Log to console |
-| `SlientLog` | Disable log |
-| `AbstractLog` | Base log |
-
-### Options
-
-| Key | Type | Default | Description |
-|-----|------|---------|-------------|
-| `experimental` | `bool` | `false` | Enable experimental conversions |
-
-### Example
-
-```javascript
-import {ConsoleLog, ConvertJavaTextureToBedrockApi, Input, LocalFileInputEntry, LocalFileOutput} from "@ozelot379/convert-minecraft-java-texture-to-bedrock-api";
+import {ConsoleLog, Input, LocalFileInputEntry, LocalFileOutput} from "@ozelot379/convert-base-api";
+import {ConvertJavaTextureToBedrockApi} from "@ozelot379/convert-minecraft-java-texture-to-bedrock-api";
 
 (async () => {
     let output;
@@ -97,7 +36,7 @@ import {ConsoleLog, ConvertJavaTextureToBedrockApi, Input, LocalFileInputEntry, 
     try {
         output = await new ConvertJavaTextureToBedrockApi(new Input(new LocalFileInputEntry("input/java_texture_pack.zip")), new LocalFileOutput("output/bedrock_texture_pack.mcpack"), new ConsoleLog()).convert();
     } catch (err) {
-        console.log(err);
+        console.err(err);
 
         return;
     }
@@ -105,6 +44,8 @@ import {ConsoleLog, ConvertJavaTextureToBedrockApi, Input, LocalFileInputEntry, 
     console.log(`Output: ${output}`);
 })();
 ```
+
+More infos at https://github.com/ozelot379/ConvertBaseApi#user-content-description 
 
 ## Extras (for texture pack creators)
 

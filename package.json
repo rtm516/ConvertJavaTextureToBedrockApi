@@ -2,7 +2,7 @@
   "name": "@ozelot379/convert-minecraft-java-texture-to-bedrock-api",
   "type": "module",
   "productName": "ConvertJavaTextureToBedrockApi",
-  "version": "3.6.1",
+  "version": "4.0.0",
   "description": "API for convert Minecraft Java texture packs to Bedrock texture packs",
   "keywords": [
     "Minecraft",
@@ -23,11 +23,8 @@
   },
   "homepage": "https://github.com/ozelot379/ConvertJavaTextureToBedrockApi#readme",
   "dependencies": {
-    "@ozelot379/jimp-plugins": "1.2.6",
-    "jimp": "0.9.8",
-    "jszip": "3.4.0",
-    "tga": "1.0.3",
-    "uuid": "3.4.0"
+    "@ozelot379/convert-base-api": "1.0.0",
+    "uuid": "8.3.0"
   },
   "devDependencies": {},
   "engines": {

@@ -1,4 +1,4 @@
-import {AbstractConverter} from "./AbstractConverter.mjs";
+import {AbstractConverter} from "@ozelot379/convert-base-api";
 
 /**
  * Class BannerPatternConverter
@@ -35,7 +35,7 @@ class BannerPatternConverter extends AbstractConverter {
             }
 
             image_pattern.scan(0, 0, image_pattern.getWidth(), image_pattern.getHeight(), (x, y, idx) => {
-                if (image_pattern.bitmap.data[idx] > 0 && image_pattern.bitmap.data[idx + 3] === 255) {
+                if (image_pattern.bitmap.data[idx + 3] > 0 && image_pattern.bitmap.data[idx] > 0) {
                     image.bitmap.data[idx] = color[0];
                     image.bitmap.data[idx + 1] = color[1];
                     image.bitmap.data[idx + 2] = color[2];

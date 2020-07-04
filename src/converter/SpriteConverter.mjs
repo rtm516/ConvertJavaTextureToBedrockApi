@@ -1,4 +1,4 @@
-import {AbstractConverter} from "./AbstractConverter.mjs";
+import {AbstractConverter} from "@ozelot379/convert-base-api";
 import {DeleteConverter} from "./DeleteConverter.mjs";
 import Jimp from "@ozelot379/jimp-plugins";
 
@@ -16,6 +16,7 @@ class SpriteConverter extends AbstractConverter {
 
         let image = null;
         let factor = null;
+        const missing_sprites = [];
 
         if (await this.output.exists(to)) {
             this.log.log(`Convert sprite ${to}`);
@@ -27,6 +28,7 @@ class SpriteConverter extends AbstractConverter {
 
         for (const [sprite, x, y, factor_detect] of sprites) {
             if (!await this.output.exists(sprite)) {
+                missing_sprites.push(sprite);
                 continue;
             }
 
@@ -51,6 +53,10 @@ class SpriteConverter extends AbstractConverter {
         }
 
         if (image !== null) {
+            for (const missing_sprite of missing_sprites) {
+                this.log.warn(`Missing texture ${missing_sprite} - May used a transparent image`)
+            }
+
             await this.writeImage(to, image);
         }
 
@@ -62,7 +68,7 @@ class SpriteConverter extends AbstractConverter {
      */
     static get DEFAULT_CONVERTER_DATA() {
         return [
-            // Banner
+            // Banner pattern
             [512, 512, [
                 ["textures/entity/banner_base.png", 0, 0, 64],
                 ["textures/entity/banner/border.png", 64, 0, 64],
