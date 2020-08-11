@@ -1,5 +1,13 @@
 # Changelog
 
+## [4.0.0]
+- Remove convert piglin
+- Fix banner pattern black
+- Fix banner pattern preview max size
+- Fix banner illager pattern
+- Warn for partially missing sprite images (For instance banner pattern, painting and particle), because may they will be transparent in the result
+- Separate base api
+
 ## [3.6.1]
 - Fix root folder in sub folder in some wrong texture packs
 - Fix rename files in local folder to not exists folder

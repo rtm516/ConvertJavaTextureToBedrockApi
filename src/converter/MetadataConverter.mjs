@@ -1,6 +1,8 @@
-import {AbstractConverter} from "./AbstractConverter.mjs";
+import {AbstractConverter} from "@ozelot379/convert-base-api";
 import {DeleteConverter} from "./DeleteConverter.mjs";
-import uuid from "uuid/v4.js";
+import {v4} from "uuid";
+
+const {parse} = JSON;
 
 /**
  * Class MetadataConverter
@@ -26,7 +28,7 @@ class MetadataConverter extends AbstractConverter {
 
             to_delete.push(new DeleteConverter(uuid_header_file));
         } else {
-            uuid_header = uuid();
+            uuid_header = v4();
         }
 
         let uuid_module = "";
@@ -35,10 +37,10 @@ class MetadataConverter extends AbstractConverter {
 
             to_delete.push(new DeleteConverter(uuid_module_file));
         } else {
-            uuid_module = uuid();
+            uuid_module = v4();
         }
 
-        MetadataConverter.mcmeta = JSON.parse((await this.output.read(from)).toString("utf8").trim()); // trim it to supports UF8 files with 'BOOM' at the beginning
+        MetadataConverter.mcmeta = parse((await this.output.read(from)).toString("utf8").trim()); // trim it to supports UF8 files with 'BOOM' at the beginning
 
         if (MetadataConverter.mcmeta.pack.pack_format !== 4 && MetadataConverter.mcmeta.pack.pack_format !== 5) {
             throw new Error("Only supports pack_format 4 (v1.13 or v1.14) or 5 (v1.15 or v1.16)!");

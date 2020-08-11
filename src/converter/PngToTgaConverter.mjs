@@ -1,6 +1,6 @@
-import {AbstractConverter} from "./AbstractConverter.mjs";
+import {AbstractConverter} from "@ozelot379/convert-base-api";
 import {DeleteConverter} from "./DeleteConverter.mjs";
-import TGA from "tga";
+import Jimp from "@ozelot379/jimp-plugins";
 
 /**
  * Class PngToTgaConverter
@@ -22,9 +22,7 @@ class PngToTgaConverter extends AbstractConverter {
 
         const image = await this.readImage(from);
 
-        const tga_image = TGA.createTgaBuffer(image.getWidth(), image.getHeight(), image.bitmap.data);
-
-        await this.output.write(to, tga_image);
+        await this.writeImage(to, image, Jimp.MIME_TGA);
 
         if (!not_delete) {
             to_delete.push(new DeleteConverter(from));
@@ -106,6 +104,7 @@ class PngToTgaConverter extends AbstractConverter {
             ["textures/entity/banner/half_vertical.png", "textures/entity/banner/banner_half_vertical.tga"],
             ["textures/entity/banner/half_vertical_right.png", "textures/entity/banner/banner_half_vertical_right.tga"],
             ["textures/entity/banner/mojang.png", "textures/entity/banner/banner_mojang.tga"],
+            ["textures/entity/banner/piglin.png", "textures/entity/banner/banner_piglin.tga"],
             ["textures/entity/banner/rhombus.png", "textures/entity/banner/banner_rhombus.tga"],
             ["textures/entity/banner/skull.png", "textures/entity/banner/banner_skull.tga"],
             ["textures/entity/banner/small_stripes.png", "textures/entity/banner/banner_small_stripes.tga"],

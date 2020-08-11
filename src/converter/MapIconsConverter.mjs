@@ -1,4 +1,4 @@
-import {AbstractConverter} from "./AbstractConverter.mjs";
+import {AbstractConverter} from "@ozelot379/convert-base-api";
 import Jimp from "@ozelot379/jimp-plugins";
 
 /**
