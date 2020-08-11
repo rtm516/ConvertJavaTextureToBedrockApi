@@ -1,5 +1,8 @@
 # Changelog
 
+## [4.0.1]
+- Fix `pack_format` `6`
+
 ## [4.0.0]
 - Remove convert piglin
 - Fix banner pattern black
