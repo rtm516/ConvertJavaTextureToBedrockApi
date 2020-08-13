@@ -1,6 +1,6 @@
 import {AbstractConverter} from "@ozelot379/convert-base-api";
 import {DeleteConverter} from "./DeleteConverter.mjs";
-import {v4} from "uuid";
+import v4 from "uuid/v4.js";
 
 const {parse} = JSON;
 

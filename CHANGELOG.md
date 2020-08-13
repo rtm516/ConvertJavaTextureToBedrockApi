@@ -1,5 +1,8 @@
 # Changelog
 
+## [4.0.2]
+- Downgrade dependencies because broken with webpack
+
 ## [4.0.1]
 - Fix `pack_format` `6`
 
