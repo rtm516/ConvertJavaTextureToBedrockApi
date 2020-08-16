@@ -1,5 +1,9 @@
 # Changelog
 
+## [4.0.3]
+- Log warn logs occurred count
+- Mark warning logs yellow
+
 ## [4.0.2]
 - Downgrade dependencies because broken with webpack
 
