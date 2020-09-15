@@ -1,5 +1,8 @@
 # Changelog
 
+## [4.0.4]
+- Auto publish to npm
+
 ## [4.0.3]
 - Log warn logs occurred count
 - Mark warning logs yellow
