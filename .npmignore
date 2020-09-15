@@ -1,4 +1,6 @@
+.gitlab-ci.yml
 .idea
+.npmrc
 build
 node_modules
 *.lock

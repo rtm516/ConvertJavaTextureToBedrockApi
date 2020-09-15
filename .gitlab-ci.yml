@@ -1,0 +1,7 @@
+npm_publish:
+  image: node:lts
+  stage: deploy
+  script:
+    - npm publish --access public --otp $NPM_OTP
+  only:
+    - tags
