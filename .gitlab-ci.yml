@@ -5,6 +5,6 @@ npm_publish:
     - npm
   stage: deploy
   script:
-    - npm publish --access public --otp "$(curl -s OTP_URL)"
+    - npm publish --access public --otp "$(curl -s $OTP_URL)"
   only:
     - tags
