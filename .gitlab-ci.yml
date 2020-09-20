@@ -1,7 +1,10 @@
 npm_publish:
   image: node:lts
+  tags:
+    - docker
+    - npm
   stage: deploy
   script:
-    - npm publish --access public --otp $NPM_OTP
+    - npm publish --access public --otp "$(curl -s $OTP_URL)"
   only:
     - tags
