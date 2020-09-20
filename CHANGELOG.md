@@ -1,5 +1,9 @@
 # Changelog
 
+## [4.0.5]
+- Set alpha to `2` in `OverlayToTranslateConverter` 
+- Auto publish to npm
+
 ## [4.0.4]
 - Auto publish to npm
 

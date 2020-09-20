@@ -28,7 +28,7 @@ class OverlayToTranslateConverter extends AbstractConverter {
                 image.bitmap.data[idx] = image_overlay.bitmap.data[idx];
                 image.bitmap.data[idx + 1] = image_overlay.bitmap.data[idx + 1];
                 image.bitmap.data[idx + 2] = image_overlay.bitmap.data[idx + 2];
-                image.bitmap.data[idx + 3] = Math.min(1, image_overlay.bitmap.data[idx + 3]);
+                image.bitmap.data[idx + 3] = 2;
             }
         });
 
